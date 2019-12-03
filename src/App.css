@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -15,8 +11,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-shadow: 3px 3px 3px #000000;
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+.Jumbotron {
+  background-image: url('haasandmilan.png');
+  background-size: cover;
+  background-position: center;
 }
