@@ -4,7 +4,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {Helmet} from "react-helmet";
 
 import PlaceHolder from './components/PlaceHolder';
 
@@ -13,11 +12,6 @@ import './App.css';
 const App = () => {
   return (
     <Router>
-      <Helmet>
-        <title>My Title</title>
-        <link rel="canonical" href="https://haasandmilan/" />
-        <meta name="description" content="Helmet application" />
-      </Helmet>
       <Switch>
         <Route path="/">
           <PlaceHolder />
