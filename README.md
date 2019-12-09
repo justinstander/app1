@@ -27,6 +27,19 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `REACT_APP_GA_ID=UA-xxxxxxxxx-x yarn build-test`
+
+Runs all tests and exits.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `AWS_ACCESS_KEY_ID=ABC123 AWS_SECRET_ACCESS_KEY=ABC123 AWS_S3_BUCKET=my-bucket yarn sync`
+
+Synchronizes the latest build (`./build`) with your AWS S3 bucket.
+
+### `AWS_ACCESS_KEY_ID=ABC123 AWS_SECRET_ACCESS_KEY=ABC123 AWS_CLOUDFRONT_DISTRIBUTION_ID=ABC123 yarn invalidate`
+
+Invalidates your AWS CloudFront cache.
+
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
