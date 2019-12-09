@@ -9,13 +9,14 @@
     "react-dom": "^16.12.0",
     "react-ga": "^2.7.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "build-test": "yarn test --watchAll=false --watch=false", 
+    "build-test": "yarn test --watchAll=false --watch=false",
     "invalidate": "aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths '/*'",
     "sync": "aws s3 sync build/ s3://$AWS_S3_BUCKET",
     "deploy": "yarn build && yarn build-test && yarn sync && yarn invalidate",

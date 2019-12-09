@@ -7,8 +7,6 @@ import {
 
 import PlaceHolder from './components/PlaceHolder';
 
-import './App.css';
-
 const App = () => {
   return (
     <Router>
