@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4dda0777626d40e4802bb14351e214b5)](https://www.codacy.com/manual/justinstander/app1?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinstander/app1&amp;utm_campaign=Badge_Grade)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Environment Variables
