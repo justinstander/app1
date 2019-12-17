@@ -55,6 +55,10 @@ Synchronizes the latest build (`./build`) with your AWS S3 bucket.
 
 Invalidates your AWS CloudFront cache.
 
+### `yarn deploy`
+
+Useful for running the whole CI sequence locally. `yarn test` is automated and run on pull requests. `yarn build`, `yarn sync`, and `yarn invalidate` are automated through AWS CodePipeline.
+
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
