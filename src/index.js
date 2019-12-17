@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 
 import ReactGA from 'react-ga';
 
-ReactGA.initialize(process.env.REACT_APP_GA_ID);
+ReactGA.initialize(process.env.REACT_APP_GA_ID);    
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

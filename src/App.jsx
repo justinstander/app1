@@ -7,16 +7,18 @@ import {
 
 import PlaceHolder from './components/PlaceHolder';
 
-const App = () => {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/">
-          <PlaceHolder />
-        </Route>
-      </Switch>
-    </Router>
-  );
+class App extends React.PureComponent {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route path="/">
+            <PlaceHolder />
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
