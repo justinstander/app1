@@ -4,14 +4,25 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
+import ReactGA from 'react-ga';
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from './reducers'
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import ReactGA from 'react-ga';
+ReactGA.initialize(process.env.REACT_APP_GA_ID);
 
-ReactGA.initialize(process.env.REACT_APP_GA_ID);    
+const store = createStore(rootReducer);  
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+);
 
 ReactGA.pageview('/');
 
