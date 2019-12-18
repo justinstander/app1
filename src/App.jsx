@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 
-import PlaceHolder from './components/PlaceHolder';
+import PlaceHolderComponent from './components/PlaceHolderContainer';
 
 class App extends React.PureComponent {
   render() {
@@ -13,7 +13,7 @@ class App extends React.PureComponent {
       <Router>
         <Switch>
           <Route path="/">
-            <PlaceHolder />
+            <PlaceHolderComponent />
           </Route>
         </Switch>
       </Router>

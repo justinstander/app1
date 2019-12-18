@@ -15,10 +15,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactGA.initialize(process.env.REACT_APP_GA_ID);
 
-const store = createStore(rootReducer);  
-
 ReactDOM.render(
-	<Provider store={store}>
+	<Provider store={createStore(rootReducer)}>
 		<App />
 	</Provider>,
 	document.getElementById('root')

@@ -6,7 +6,8 @@ import {
   PlaceHolderJumbotron
 } from './PlaceHolder.style';
 
-const PlaceHolder = () => {
+const PlaceHolder = ({totalCost, getTotalCost}) => {
+  getTotalCost();
   return (
     <PlaceHolderContainer>
       <PlaceHolderHeader>
@@ -16,6 +17,7 @@ const PlaceHolder = () => {
             <h2>The Greatest Advertising Agency Ever</h2>
           </div>
         </PlaceHolderJumbotron>
+        <h4>Current Monthly Cost: {totalCost}</h4>
    		</PlaceHolderHeader>
     </PlaceHolderContainer>
   );
