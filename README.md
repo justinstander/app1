@@ -1,5 +1,8 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4dda0777626d40e4802bb14351e214b5)](https://www.codacy.com/manual/justinstander/app1?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinstander/app1&amp;utm_campaign=Badge_Grade)![AWS CodeBuild Badge](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoidkpJcWIrdmJzajlDYlBOM2E1TjZ2RGZjL0JyN1Nia1F2aEpXcTNGT01CUXBGM0w2VkdQRFRnajA5amlUcXQxQ2RwTTZja1gxSmZkNmx1eVBQWmMrYnBvPSIsIml2UGFyYW1ldGVyU3BlYyI6ImRSaVNvaWVaSW5nWFo2ZkMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4dda0777626d40e4802bb14351e214b5)](https://www.codacy.com/manual/justinstander/app1?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinstander/app1&amp;utm_campaign=Badge_Grade)
 
+dev | master
+------------ | -------------
+![AWS CodeBuild Badge for Dev](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoidkpJcWIrdmJzajlDYlBOM2E1TjZ2RGZjL0JyN1Nia1F2aEpXcTNGT01CUXBGM0w2VkdQRFRnajA5amlUcXQxQ2RwTTZja1gxSmZkNmx1eVBQWmMrYnBvPSIsIml2UGFyYW1ldGVyU3BlYyI6ImRSaVNvaWVaSW5nWFo2ZkMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=dev) | ![AWS CodeBuild Badge for Master](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoidkpJcWIrdmJzajlDYlBOM2E1TjZ2RGZjL0JyN1Nia1F2aEpXcTNGT01CUXBGM0w2VkdQRFRnajA5amlUcXQxQ2RwTTZja1gxSmZkNmx1eVBQWmMrYnBvPSIsIml2UGFyYW1ldGVyU3BlYyI6ImRSaVNvaWVaSW5nWFo2ZkMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
