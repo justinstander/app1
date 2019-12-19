@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Required.
 
-```
+```sh
 AWS_S3_BUCKET=bucket
 AWS_CLOUDFRONT_DISTRIBUTION_ID=XXXXXXXXXXXXXX
 REACT_APP_GA_ID=UA-xxxxxxxxx-x
