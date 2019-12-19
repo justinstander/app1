@@ -1,8 +1,9 @@
 import styled from "styled-components";
+
 import Jumbotron from "react-bootstrap/Jumbotron";
+import Badge from 'react-bootstrap/Badge'
 
 export const PlaceHolderContainer = styled.div`
-  text-align: center;
 `;
 
 export const PlaceHolderHeader = styled.div`
@@ -12,13 +13,18 @@ export const PlaceHolderHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  text-shadow: 3px 3px 3px #000000;
+  
 `;
 
 export const PlaceHolderJumbotron = styled(Jumbotron)`
+  color: white;
+  text-align: center;
+  text-shadow: 3px 3px 3px #000000;
+  font-size: calc(10px + 2vmin);
   background-image: url('haasandmilan.png');
   background-size: cover;
   background-position: center;
+`;
+
+export const CostBadge = styled(Badge)`
 `;
