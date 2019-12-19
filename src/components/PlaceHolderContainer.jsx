@@ -1,7 +1,7 @@
-import { connect } from "react-redux"
-import { getTotalCost } from "../actions"
+import { connect } from "react-redux";
+import { getTotalCost } from "../actions";
 
-import PlaceHolder from "./PlaceHolder"
+import PlaceHolder from "./PlaceHolder";
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-    	getTotalCost: () => {
+    getTotalCost: () => {
         dispatch(getTotalCost());
 		}
 	};

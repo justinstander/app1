@@ -18,7 +18,7 @@ const PlaceHolder = ({totalCost, getTotalCost}) => {
           </div>
         </PlaceHolderJumbotron>
         <h4>Current Monthly Cost: {totalCost}</h4>
-   	  </PlaceHolderHeader>
+      </PlaceHolderHeader>
     </PlaceHolderContainer>
   );
 };

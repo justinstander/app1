@@ -5,4 +5,4 @@ export const getTotalCost = () => {
     	type: GET_TOTAL_COST,
     	totalCost: "$0.50"
   	};
-}
+};
