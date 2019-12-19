@@ -1,4 +1,4 @@
-import { GET_TOTAL_COST } from '../actions'
+import { GET_TOTAL_COST } from "../actions"
 
 export default (state = {}, action) => {
 	switch(action.type) {

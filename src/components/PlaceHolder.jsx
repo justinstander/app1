@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 import {
   PlaceHolderContainer,
   PlaceHolderHeader,
   PlaceHolderJumbotron
-} from './PlaceHolder.style';
+} from "./PlaceHolder.style";
 
 const PlaceHolder = ({totalCost, getTotalCost}) => {
   getTotalCost();
@@ -18,9 +18,9 @@ const PlaceHolder = ({totalCost, getTotalCost}) => {
           </div>
         </PlaceHolderJumbotron>
         <h4>Current Monthly Cost: {totalCost}</h4>
-   		</PlaceHolderHeader>
+   	  </PlaceHolderHeader>
     </PlaceHolderContainer>
   );
-}
+};
 
 export default PlaceHolder;

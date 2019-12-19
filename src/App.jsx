@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
-import PlaceHolderComponent from './components/PlaceHolderContainer';
+import PlaceHolderComponent from "./components/PlaceHolderContainer";
 
 class App extends React.PureComponent {
   render() {

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import styled from "styled-components";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 export const PlaceHolderContainer = styled.div`
   text-align: center;

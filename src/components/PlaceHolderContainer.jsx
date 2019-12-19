@@ -1,18 +1,18 @@
-import { connect } from 'react-redux'
-import { getTotalCost } from '../actions'
+import { connect } from "react-redux"
+import { getTotalCost } from "../actions"
 
-import PlaceHolder from './PlaceHolder'
+import PlaceHolder from "./PlaceHolder"
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     totalCost: state.main.totalCost
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
 	return {
     	getTotalCost: () => {
-      		dispatch(getTotalCost());
+        dispatch(getTotalCost());
 		}
 	};
 };
@@ -20,6 +20,6 @@ const mapDispatchToProps = dispatch => {
 const PlaceHolderComponent = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlaceHolder)
+)(PlaceHolder);
 
-export default PlaceHolderComponent
+export default PlaceHolderComponent;
