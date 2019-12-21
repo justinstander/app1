@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Badge from 'react-bootstrap/Badge'
+import Alert from 'react-bootstrap/Alert'
 
 export const PlaceHolderContainer = styled.div`
 `;
@@ -27,4 +28,7 @@ export const PlaceHolderJumbotron = styled(Jumbotron)`
 `;
 
 export const CostBadge = styled(Badge)`
+`;
+
+export const ErrorAlert = styled(Alert)`
 `;

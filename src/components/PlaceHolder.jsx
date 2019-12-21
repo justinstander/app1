@@ -4,7 +4,8 @@ import {
   PlaceHolderContainer,
   PlaceHolderHeader,
   PlaceHolderJumbotron,
-  CostBadge
+  CostBadge,
+  ErrorAlert
 } from "./PlaceHolder.style";
 
 class PlaceHolder extends React.PureComponent {
@@ -25,6 +26,9 @@ class PlaceHolder extends React.PureComponent {
               <h2>The Greatest Advertising Agency Ever</h2>
             </div>
           </PlaceHolderJumbotron>
+          {this.props.message && <ErrorAlert variant="danger">
+            {this.props.message}
+          </ErrorAlert>}
         </PlaceHolderHeader>
       </PlaceHolderContainer>
     );

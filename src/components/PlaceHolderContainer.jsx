@@ -1,18 +1,21 @@
 import { connect } from "react-redux";
-import { getTotalCost } from "../actions";
+
+import Api from "../Api";
+// import { getTotalCost } from "../actions";
 
 import PlaceHolder from "./PlaceHolder";
 
 const mapStateToProps = (state) => {
   return {
-    totalCost: state.main.totalCost
+    totalCost: state.main.totalCost,
+    message: state.main.message
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
     getTotalCost: () => {
-        dispatch(getTotalCost());
+        Api.getTotalCost(dispatch);
 		}
 	};
 };
