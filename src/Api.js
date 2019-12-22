@@ -11,8 +11,8 @@ const logError = (message) => {
 
 const lambda = new Lambda({
   region: 'us-east-1',
-  accessKeyId: 'ABC',
-  secretAccessKey: '123'
+  accessKeyId: process.env.REACT_APP_API_ID,
+  secretAccessKey: process.env.REACT_APP_API_SECRET
 });
 
 /**
@@ -25,13 +25,13 @@ const lambda = new Lambda({
  */
 const getTotalCost = (dispatch) => {
   lambda.invoke({
-    FunctionName:'STRING_VALUE_2'
+    FunctionName:"haasandmilan-api-getTotalCost"
   }, (error, data) => {
     if(error) {
       logError(error.message);
       dispatch(apiError(error.message));
     } else {
-      dispatch(totalCostChanged());
+      dispatch(totalCostChanged(JSON.parse(data.Payload).body));
     }
   });
 };
