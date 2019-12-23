@@ -13,9 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-    getTotalCost: (params=null) => {
-        Api.getTotalCost(dispatch, params);
-		}
+    getTotalCost: (params) => {Api.getTotalCost(dispatch, params);}
 	};
 };
 

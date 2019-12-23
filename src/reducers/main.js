@@ -4,7 +4,7 @@ import {
 } from "../actions";
 
 const initialState = {
-	totalCost: "$...",
+	totalCost: null,
 	message: null
 };
 

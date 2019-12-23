@@ -5,9 +5,11 @@ import {
   apiError
 } from "./actions";
 
+const GET_TOTAL_COST = "haasandmilan-api-getTotalCost";
+
 const logError = (message) => {
   console.error('Api', message);
-}
+};
 
 const lambda = new Lambda({
   region: process.env.REACT_APP_API_REGION,
@@ -16,40 +18,34 @@ const lambda = new Lambda({
 });
 
 const getBody = (data) => {
-  if( data && data.Payload ) {
-    return JSON.parse(data.Payload).body
+  if (data && data.Payload) {
+    return JSON.parse(data.Payload)
   }
-  return "";
+  return null;
 };
 
 /**
- * FunctionName: 'STRING_VALUE'
  * ClientContext: 'STRING_VALUE',
  * InvocationType: Event | RequestResponse | DryRun,
  * LogType: None | Tail,
- * Payload: Buffer.from('...') || 'STRING_VALUE' // Strings will be Base-64 encoded on your behalf
  * Qualifier: 'STRING_VALUE'
  */
 const invoke = async (dispatch, FunctionName, Payload) => {
-  const data = await lambda.invoke({
+  return await lambda.invoke({
     FunctionName,
     Payload
   }).promise().catch((error) => {
     logError(error.message);
     dispatch(apiError(error.message));
   });
-
-  if( data ) {
-    dispatch(totalCostChanged(getBody(data)));
-  }
 };
 
-const getTotalCost = (dispatch, params=null) => {
-  invoke(
-    dispatch,
-    "haasandmilan-api-getTotalCost",
-    params ? JSON.stringify(params) : null
-  );
+const getTotalCost = async (dispatch, params=null) => {
+  const data = await invoke(dispatch, GET_TOTAL_COST, JSON.stringify(params));
+  
+  if (data) {
+    dispatch(totalCostChanged(getBody(data)));
+  }
 };
 
 export default { getTotalCost };

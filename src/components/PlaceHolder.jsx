@@ -10,7 +10,7 @@ import {
 
 class PlaceHolder extends React.PureComponent {
   componentDidMount() {
-    this.props.getTotalCost({totalCost:"bar"});
+    this.props.getTotalCost();
   }
 
   render() {
