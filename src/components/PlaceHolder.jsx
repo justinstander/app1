@@ -10,10 +10,12 @@ import {
 
 class PlaceHolder extends React.PureComponent {
   componentDidMount() {
-    this.props.getTotalCost();
+    this.props.getTotalCost({totalCost:"bar"});
   }
 
   render() {
+    const { message } = this.props;
+
     return (
       <PlaceHolderContainer>
         <PlaceHolderHeader>
@@ -26,8 +28,8 @@ class PlaceHolder extends React.PureComponent {
               <h2>The Greatest Advertising Agency Ever</h2>
             </div>
           </PlaceHolderJumbotron>
-          {this.props.message && <ErrorAlert variant="danger">
-            {this.props.message}
+          {message && <ErrorAlert variant="danger">
+            {message}
           </ErrorAlert>}
         </PlaceHolderHeader>
       </PlaceHolderContainer>
