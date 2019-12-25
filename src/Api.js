@@ -17,7 +17,7 @@ const lambda = new Lambda({
   secretAccessKey: process.env.REACT_APP_API_SECRET
 });
 
-const getBody = (data) => {
+const getPayload = (data) => {
   if (data && data.Payload) {
     return JSON.parse(data.Payload)
   }
@@ -44,7 +44,7 @@ const getTotalCost = async (dispatch, params=null) => {
   const data = await invoke(dispatch, GET_TOTAL_COST, JSON.stringify(params));
   
   if (data) {
-    dispatch(totalCostChanged(getBody(data)));
+    dispatch(totalCostChanged(getPayload(data)));
   }
 };
 
