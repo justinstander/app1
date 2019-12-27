@@ -14,7 +14,6 @@ export const PlaceHolderHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 `;
 
 export const PlaceHolderJumbotron = styled(Jumbotron)`
@@ -25,6 +24,7 @@ export const PlaceHolderJumbotron = styled(Jumbotron)`
   background-image: url('haasandmilan.png');
   background-size: cover;
   background-position: center;
+  width: 90%;
 `;
 
 export const CostBadge = styled(Badge)`
