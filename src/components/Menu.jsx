@@ -3,14 +3,17 @@ import React from "react";
 import {
   MenuNavbar,
   MenuNav,
-  MenuNavDropdown
+  MenuNavDropdown,
+  MenuBrand
 } from "./Menu.style";
 
 export class Menu extends React.PureComponent {
+	// TODO: Replace href links with React Router Links
+	// 
 	render() {
 		return (
-			<MenuNavbar expand="lg">
-  				<MenuNavbar.Brand href="/">Haas & Milan</MenuNavbar.Brand>
+			<MenuNavbar expand="lg" variant="dark">
+  				<MenuBrand href="/">Haas & Milan</MenuBrand>
   				<MenuNavbar.Toggle />
   				<MenuNavbar.Collapse>
     				<MenuNav className="mr-auto">

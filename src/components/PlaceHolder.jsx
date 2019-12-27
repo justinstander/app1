@@ -25,7 +25,7 @@ class PlaceHolder extends React.PureComponent {
         <PlaceHolderHeader>
           <Menu />
           <PlaceHolderJumbotron>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra, tortor nec scelerisque porta, neque quam sollicitudin odio, in condimentum arcu magna in elit. Sed blandit gravida elit non rhoncus. Curabitur ut imperdiet ipsum, ornare consectetur velit. Pellentesque convallis in elit vitae mollis. In ligula augue, vulputate blandit suscipit ut, ornare in ex. Donec id ligula vitae quam semper interdum vel nec diam.
+            Welcome to Haas & Milan
           </PlaceHolderJumbotron>
           <CostBadge variant="success">
             {this.props.totalCost}

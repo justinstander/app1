@@ -5,9 +5,6 @@ import Badge from 'react-bootstrap/Badge'
 import Alert from 'react-bootstrap/Alert'
 
 export const PlaceHolderContainer = styled.div`
-`;
-
-export const PlaceHolderHeader = styled.div`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -16,15 +13,12 @@ export const PlaceHolderHeader = styled.div`
   justify-content: center;
 `;
 
+export const PlaceHolderHeader = styled.div`
+  width: 80%;
+`;
+
 export const PlaceHolderJumbotron = styled(Jumbotron)`
-  color: white;
-  text-align: center;
-  text-shadow: 3px 3px 3px #000000;
-  font-size: calc(10px + 2vmin);
-  background-image: url('haasandmilan.png');
-  background-size: cover;
-  background-position: center;
-  width: 90%;
+  width: 100%;
 `;
 
 export const CostBadge = styled(Badge)`

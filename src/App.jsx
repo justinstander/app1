@@ -12,6 +12,9 @@ class App extends React.PureComponent {
     return (
       <Router>
         <Switch>
+          <Route path="/about">
+            
+          </Route>
           <Route path="/">
             <PlaceHolderComponent />
           </Route>
