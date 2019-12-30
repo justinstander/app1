@@ -10,6 +10,10 @@ class Page extends React.PureComponent {
 			ReactGA.pageview(pathname);
 		}
   	}
+
+  	render() {
+  		return null;
+  	}
 }
 
 export default Page;

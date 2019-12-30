@@ -18,8 +18,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "build-test": "yarn test --watchAll=false --watch=false",
+    "test": "react-scripts test --verbose",
+    "test-test": "react-scripts test --verbose --watchAll=false --watch=false",
+    "build-test": "react-scripts test --collect-coverage --verbose --watchAll=false --watch=false",
     "invalidate": "aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths '/*'",
     "sync": "aws s3 sync build/ s3://$AWS_S3_BUCKET",
     "deploy": "yarn build && yarn build-test && yarn sync && yarn invalidate",
