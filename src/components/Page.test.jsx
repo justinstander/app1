@@ -20,7 +20,7 @@ afterEach(() => {
  div = null;
 });
 
-it("should create a page without a location", () => {
+it("should throw TypeError on a page without a location (without router)", () => {
 	const originalError = console.error;
   	console.error = jest.fn();
 
@@ -33,7 +33,7 @@ it("should create a page without a location", () => {
 	console.error = originalError;
 });
 
-it("should create a page with a location", () => {
+it("should create a page with a location (with router)", () => {
 	const pageWithLocation = <Page location={{pathname:"/page"}} />;
 
 	expect(() => {
