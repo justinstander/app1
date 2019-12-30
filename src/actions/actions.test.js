@@ -1,12 +1,23 @@
-xit("test apiError action", () => {
-	expect("Define Tests or Skip").toBeFalsy();
+import * as Actions from "./" ;
+
+it("test action apiError", () => {
+	const message = "Testing 123";
+	expect(Actions.apiError(message)).toMatchObject({
+		type: Actions.API_ERROR,
+		message
+	});
 });
 
-xit("test getTotalCost action", () => {
-	expect("Define Tests or Skip").toBeFalsy();
-
+it("test action getTotalCost", () => {
+	expect(Actions.getTotalCost()).toMatchObject({
+		type: Actions.GET_TOTAL_COST
+	});
 });
 
-xit("test totalCostChanged action" , () => {
-	expect("Define Tests or Skip").toBeFalsy();
+it("test action totalCostChanged" , () => {
+	const totalCost = "$0.99";
+	expect(Actions.totalCostChanged(totalCost)).toMatchObject({
+		type: Actions.TOTAL_COST_CHANGED,
+		totalCost
+	});
 });
