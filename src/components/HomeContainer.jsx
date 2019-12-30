@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import Api from "../Api";
 
-import PlaceHolder from "./PlaceHolder";
+import Home from "./Home";
 
 const mapStateToProps = (state) => {
   return {
@@ -13,13 +13,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-    getTotalCost: (params) => {Api.getTotalCost(dispatch, params);}
+    	getTotalCost: (params) => {Api.getTotalCost(dispatch, params);}
 	};
 };
 
-const PlaceHolderComponent = connect(
+const HomeComponent = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlaceHolder);
+)(Home);
 
-export default PlaceHolderComponent;
+export default HomeComponent;
