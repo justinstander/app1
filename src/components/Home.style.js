@@ -5,7 +5,7 @@ import Alert from 'react-bootstrap/Alert'
 
 export const HomeContainer = styled.div`
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;

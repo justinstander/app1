@@ -3,12 +3,13 @@ import React from "react";
 import ReactGA from "react-ga";
 
 import { Menu } from "./Menu";
+
 import {
   HomeContainer,
   ErrorAlert
 } from "./Home.style";
 
-class PlaceHolder extends React.PureComponent {
+class Home extends React.PureComponent {
   componentDidMount() {
     ReactGA.pageview("/");
   }
@@ -29,4 +30,4 @@ class PlaceHolder extends React.PureComponent {
   }
 };
 
-export default PlaceHolder;
+export default Home;

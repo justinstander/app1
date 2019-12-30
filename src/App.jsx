@@ -13,7 +13,13 @@ class App extends React.PureComponent {
       <Router>
         <Switch>
           <Route path="/about">
-            
+            <div>About</div>
+          </Route>
+          <Route path="/schedules">
+            <div>Schedules</div>
+          </Route>
+          <Route path="/settings">
+            <div>Settings</div>
           </Route>
           <Route path="/">
             <HomeComponent />

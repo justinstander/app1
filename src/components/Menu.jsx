@@ -1,27 +1,34 @@
 import React from "react";
 
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 import {
   MenuNavbar,
-  MenuNav,
-  MenuBrand,
   MenuLink
 } from "./Menu.style";
 
 export class Menu extends React.PureComponent {
 	render() {
 		return (
-			<MenuNavbar expand="md">
-  				<MenuBrand>
+			<MenuNavbar variant="dark" expand="md">
+  				<Navbar.Brand>
             <MenuLink to="/">Haas & Milan</MenuLink>
-          </MenuBrand>
+          </Navbar.Brand>
   				<MenuNavbar.Toggle />
   				<MenuNavbar.Collapse>
-    				<MenuNav className="mr-auto"/>
-            <MenuNav>
-              <MenuLink to="/search">Search</MenuLink>
-              <MenuLink to="/schedules">Schedules</MenuLink>
-              <MenuLink to="/settings">Settings</MenuLink>
-            </MenuNav>
+    				<Nav className="mr-auto"/>
+            <Nav>
+              <Nav.Link as="div">
+                <MenuLink to="/about">About</MenuLink>
+              </Nav.Link>
+              <Nav.Link as="div">
+                <MenuLink to="/schedules">Schedules</MenuLink>
+              </Nav.Link>
+              <Nav.Link as="div">
+                <MenuLink to="/settings">Settings</MenuLink>
+              </Nav.Link>
+            </Nav>
   				</MenuNavbar.Collapse>
 			</MenuNavbar>
 		);
