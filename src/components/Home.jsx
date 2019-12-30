@@ -1,31 +1,22 @@
 import React from "react";
 
-import ReactGA from "react-ga";
+import Alert from 'react-bootstrap/Alert'
 
-import { Menu } from "./Menu";
+import Page from "./Page";
+import { Container } from "./Home.style";
 
-import {
-  HomeContainer,
-  ErrorAlert
-} from "./Home.style";
-
-class Home extends React.PureComponent {
-  componentDidMount() {
-    ReactGA.pageview("/");
-  }
-
+class Home extends Page {
   render() {
     const { message } = this.props;
 
     return (
-      <HomeContainer>
-        <Menu />
+      <Container>
         {message && 
-          <ErrorAlert variant="danger">
+          <Alert variant="danger">
             {message}
-          </ErrorAlert>
+          </Alert>
         }
-      </HomeContainer>
+      </Container>
     );
   }
 };

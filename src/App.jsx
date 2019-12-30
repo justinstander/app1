@@ -5,15 +5,19 @@ import {
   Route
 } from "react-router-dom";
 
-import HomeComponent from "./components/HomeContainer";
+import { Menu } from "./components/Menu";
+
+import HomeContainer from "./components/HomeContainer";
+import AboutContainer from "./components/AboutContainer";
 
 class App extends React.PureComponent {
   render() {
     return (
       <Router>
+        <Menu />
         <Switch>
           <Route path="/about">
-            <div>About</div>
+            <AboutContainer />
           </Route>
           <Route path="/schedules">
             <div>Schedules</div>
@@ -22,7 +26,7 @@ class App extends React.PureComponent {
             <div>Settings</div>
           </Route>
           <Route path="/">
-            <HomeComponent />
+            <HomeContainer />
           </Route>
         </Switch>
       </Router>
