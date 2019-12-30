@@ -5,7 +5,7 @@ import {
 
 const initialState = {
 	totalCost: "$",
-	message: null
+	message: "Message"
 };
 
 export default (state, action) => {

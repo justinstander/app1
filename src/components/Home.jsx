@@ -3,7 +3,7 @@ import React from "react";
 import Alert from 'react-bootstrap/Alert'
 
 import Page from "./Page";
-import { Container } from "./Home.style";
+import { Container } from "./Page.style";
 
 class Home extends Page {
   render() {

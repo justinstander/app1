@@ -20,10 +20,8 @@ class App extends React.PureComponent {
             <AboutContainer />
           </Route>
           <Route path="/schedules">
-            <div>Schedules</div>
           </Route>
           <Route path="/settings">
-            <div>Settings</div>
           </Route>
           <Route path="/">
             <HomeContainer />
