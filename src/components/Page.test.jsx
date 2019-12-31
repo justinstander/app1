@@ -6,9 +6,15 @@ import ReactGA from "react-ga";
 import Page from "./Page";
 
 let div = null;
+let props = null;
 
 beforeAll(() => {
   ReactGA.initialize(process.env.REACT_APP_GA_ID, {testMode: true});
+  props = {
+  	location: {
+  		pathname: "/Page"
+  	}
+  };
 });
 
 beforeEach(() => {
@@ -22,7 +28,7 @@ afterEach(() => {
 
 it("should throw TypeError on a page without a location (without router)", () => {
 	const originalError = console.error;
-  	console.error = jest.fn();
+  	console.error = () => {};
 
 	const page = <Page />;
 
@@ -34,7 +40,7 @@ it("should throw TypeError on a page without a location (without router)", () =>
 });
 
 it("should create a page with a location (with router)", () => {
-	const pageWithLocation = <Page location={{pathname:"/page"}} />;
+	const pageWithLocation = <Page {...props} />;
 
 	expect(() => {
 		ReactDOM.render(pageWithLocation, div);
