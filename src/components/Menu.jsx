@@ -9,24 +9,49 @@ import {
 } from "./Menu.style";
 
 export class Menu extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {expanded: false};
+
+    this.toggleOnClick = this.toggleOnClick.bind(this);
+    this.closeOnClick = this.closeOnClick.bind(this);
+  }
+
+  toggleOnClick(event) {
+    this.setState({expanded:!this.state.expanded});
+  }
+
+  closeOnClick(event) {
+    this.setState({expanded:false});
+  }
+
 	render() {
 		return (
-			<MenuNavbar variant="dark" expand="md">
+			<MenuNavbar expanded={this.state.expanded} variant="dark" expand="md">
   				<Navbar.Brand>
-            <MenuLink to="/">Haas & Milan</MenuLink>
+            <MenuLink to="/" onClick={this.closeOnClick}>
+              Haas & Milan
+            </MenuLink>
           </Navbar.Brand>
-  				<MenuNavbar.Toggle />
+  				<MenuNavbar.Toggle onClick={this.toggleOnClick}/>
   				<MenuNavbar.Collapse>
     				<Nav className="mr-auto"/>
             <Nav>
               <Nav.Link as="div">
-                <MenuLink to="/about">About</MenuLink>
+                <MenuLink to="/search" onClick={this.toggleOnClick}>
+                  Search
+                </MenuLink>
               </Nav.Link>
               <Nav.Link as="div">
-                <MenuLink to="/schedules">Schedules</MenuLink>
+                <MenuLink to="/schedules" onClick={this.toggleOnClick}>
+                  Schedules
+                </MenuLink>
               </Nav.Link>
               <Nav.Link as="div">
-                <MenuLink to="/settings">Settings</MenuLink>
+                <MenuLink to="/settings" onClick={this.toggleOnClick}>
+                  Settings
+                </MenuLink>
               </Nav.Link>
             </Nav>
   				</MenuNavbar.Collapse>

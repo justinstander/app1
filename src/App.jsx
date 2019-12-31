@@ -16,12 +16,14 @@ class App extends React.PureComponent {
       <Router>
         <Menu />
         <Switch>
-          <Route path="/about">
+          <Route path="/search">
             <AboutContainer />
           </Route>
           <Route path="/schedules">
+            <AboutContainer />
           </Route>
           <Route path="/settings">
+            <AboutContainer />
           </Route>
           <Route path="/">
             <HomeContainer />
