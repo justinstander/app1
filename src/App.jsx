@@ -7,8 +7,10 @@ import {
 
 import { Menu } from "./components/Menu";
 
-import HomeContainer from "./components/HomeContainer";
-import AboutContainer from "./components/AboutContainer";
+import HomeContainer from "./components/pages/HomeContainer";
+import AboutContainer from "./components/pages/AboutContainer";
+import SearchContainer from "./components/pages/SearchContainer";
+import SchedulesContainer from "./components/pages/ScheduleContainer";
 
 class App extends React.PureComponent {
   render() {
@@ -17,10 +19,10 @@ class App extends React.PureComponent {
         <Menu />
         <Switch>
           <Route path="/search">
-            <AboutContainer />
+            <SearchContainer />
           </Route>
           <Route path="/schedules">
-            <AboutContainer />
+            <SchedulesContainer />
           </Route>
           <Route path="/settings">
             <AboutContainer />
