@@ -8,5 +8,5 @@ export const SearchForm = styled(Form)`
 `; 
 
 export const SearchButton = styled(Button)`
-	margin-top: 2rem;
+	margin-top: 1rem;
 `;

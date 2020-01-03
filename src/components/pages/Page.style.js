@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
 import Container from "react-bootstrap/Container";
+import Image from 'react-bootstrap/Image'
 
 export const PageContainer = styled(Container)`
-  height: 100%;
-  max-height: 100%;
-  width: 100%;
-  padding-top: 3.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 4.5rem 1rem 0.5rem;
   text-align: center;
+`;
+
+export const PageImage = styled(Image)`
+  padding-bottom: 1rem;
 `;
