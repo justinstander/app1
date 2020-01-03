@@ -8,7 +8,7 @@ import {
 import { Menu } from "./components/Menu";
 
 import HomeContainer from "./components/pages/HomeContainer";
-import AboutContainer from "./components/pages/AboutContainer";
+import SettingsContainer from "./components/pages/SettingsContainer";
 import SearchContainer from "./components/pages/SearchContainer";
 import SchedulesContainer from "./components/pages/ScheduleContainer";
 
@@ -25,7 +25,7 @@ class App extends React.PureComponent {
             <SchedulesContainer />
           </Route>
           <Route path="/settings">
-            <AboutContainer />
+            <SettingsContainer />
           </Route>
           <Route path="/">
             <HomeContainer />

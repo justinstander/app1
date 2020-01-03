@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Api from "../../Api";
 
-import About from "./About";
+import Settings from "./Settings";
 
 const mapStateToProps = (state) => {
   return {
@@ -17,9 +17,9 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-const AboutContainer = withRouter(connect(
+const SettingsContainer = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(About));
+)(Settings));
 
-export default AboutContainer;
+export default SettingsContainer;

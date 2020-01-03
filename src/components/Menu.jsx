@@ -28,7 +28,7 @@ export class Menu extends React.PureComponent {
 
 	render() {
 		return (
-			<MenuNavbar expanded={this.state.expanded} variant="dark" expand="md">
+			<MenuNavbar expanded={this.state.expanded} bg="dark" variant="dark" expand="md" fixed="top">
   				<Navbar.Brand>
             <MenuLink to="/" onClick={this.closeOnClick}>
               Haas & Milan

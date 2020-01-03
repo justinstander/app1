@@ -14,3 +14,7 @@ export const SettingsCol = styled(Col)`
 export const SettingsLabelCol = styled(SettingsCol)`
 	text-align: right;
 `;
+
+export const SettingsValueCol = styled(SettingsCol)`
+	text-align: left;
+`;

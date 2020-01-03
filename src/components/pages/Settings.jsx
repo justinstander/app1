@@ -3,15 +3,15 @@ import React from "react";
 import Badge from "react-bootstrap/Badge";
 
 import Page from "./Page";
-import { Container } from "./Page.style";
+import {PageContainer} from "./Page.style";
 
 import {
   SettingsRow,
-  SettingsCol,
-  SettingsLabelCol
-} from "./About.style";
+  SettingsLabelCol,
+  SettingsValueCol
+} from "./Settings.style";
 
-class About extends Page {
+class Settings extends Page {
   componentDidMount() {
     super.componentDidMount();
 
@@ -25,27 +25,19 @@ class About extends Page {
   	const { totalCost } = this.props;
 
     return (
-      <Container>
-        <h3>Settings</h3>
+      <PageContainer>
+        <h3>About</h3>
         <SettingsRow>
           <SettingsLabelCol>
             AWS Cost:
           </SettingsLabelCol>
-          <SettingsCol>
+          <SettingsValueCol>
             <Badge variant="success">{totalCost}</Badge>
-          </SettingsCol>
+          </SettingsValueCol>
         </SettingsRow>
-        <SettingsRow>
-          <SettingsLabelCol>
-            Some other stuff:
-          </SettingsLabelCol>
-          <SettingsCol>
-            <Badge variant="success">some value</Badge>
-          </SettingsCol>
-        </SettingsRow>
-      </Container>
+      </PageContainer>
     );
   }
 };
 
-export default About;
+export default Settings;
