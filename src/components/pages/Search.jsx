@@ -20,7 +20,7 @@ class Search extends Page {
 			search: "",
 			searchDisabled: true,
 			clearDisabled: true
-		}
+		};
 
 		this.onSearchChange = this.onSearchChange.bind(this);
 		this.onClearClick = this.onClearClick.bind(this);
@@ -44,7 +44,7 @@ class Search extends Page {
 			search: "",
 			searchDisabled: true,
 			clearDisabled: true
-		})
+		});
 	}
 
 	onSearchSubmit(event) {
@@ -63,12 +63,10 @@ class Search extends Page {
 			<PageContainer>
 				<h3>Search</h3>
 				{message && 
-          			<Alert variant="danger">
-            			{message}
-          			</Alert>
+					<Alert variant="danger">{message}</Alert>
         		}
 				<SearchForm onSubmit={this.onSearchSubmit}>
-      				<FormControl
+					<FormControl
       					type="text"
       					placeholder="Search"
       					value={this.state.search}
@@ -79,7 +77,7 @@ class Search extends Page {
       					disabled={this.state.searchDisabled}
       					type="submit"
       				>
-      						Search
+      					Search
       				</SearchButton>{" "}
       				<SearchButton
       					variant="secondary"
@@ -88,19 +86,19 @@ class Search extends Page {
       				>
       						Clear
       				</SearchButton>
-    			</SearchForm>
-    			{searchResults && 
-    				<SearchResults>
-    					<h4>Search Results</h4>
-    					{searchResults.map((result, i) => {
-    						return (<p key={i}>{`${result.AwsRequestId.S}: ${result.Total.S}`}</p>);
-    					})}
-    					{searchResults.length === 0 &&
-    						<p>No results found</p>
-    					}
-    				</SearchResults>
-    			}
-			</PageContainer>
+      			</SearchForm>
+      			{searchResults && 
+      				<SearchResults>
+      					<h4>Search Results</h4>
+      					{searchResults.map((result, i) => {
+      						return (<p key={i}>{`${result.AwsRequestId.S}: ${result.Total.S}`}</p>);
+      					})}
+      					{searchResults.length === 0 &&
+      						<p>No results found</p>
+      					}
+      				</SearchResults>
+      			}
+      		</PageContainer>
 		)
 	}
 }

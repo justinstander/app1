@@ -28,7 +28,8 @@ afterEach(() => {
 
 it("should throw TypeError on a page without a location (without router)", () => {
 	const originalError = console.error;
-  	console.error = () => {};
+
+	console.error = () => {};
 
 	const page = <Page />;
 

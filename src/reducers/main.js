@@ -10,8 +10,8 @@ const initialState = {
 
 export default (state, action) => {
 	if (typeof state === "undefined") {
-    	return initialState;
- 	}
+		return initialState;
+	}
 
 	switch(action.type) {
 		case TOTAL_COST_CHANGED:

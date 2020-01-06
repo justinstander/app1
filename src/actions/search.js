@@ -7,4 +7,4 @@ export const searchComplete = (searchResults) => {
 
 export const clear = () => {
 	return { type: CLEAR };
-}
+};

@@ -7,7 +7,7 @@ import {
 
 import {
   searchComplete
-} from "./actions/search"
+} from "./actions/search";
 
 const GET_TOTAL_COST = "haasandmilan-api-getTotalCost";
 const SEARCH = "haasandmilan-api-search";
@@ -24,13 +24,13 @@ const lambda = new Lambda({
 
 const getPayload = (data) => {
   if (data && data.Payload) {
-    return JSON.parse(data.Payload)
+    return JSON.parse(data.Payload);
   }
   return null;
 };
 
 const invoke = async (dispatch, FunctionName, params) => {
-  dispatch(apiError(null))
+  dispatch(apiError(null));
 
   return await lambda.invoke({
     FunctionName,
@@ -51,7 +51,7 @@ const search = async (dispatch, params=null) => {
   const data = await invoke(dispatch, SEARCH, params);
 
   dispatch(searchComplete(getPayload(data)));
-}
+};
 
 export default { 
   getTotalCost,

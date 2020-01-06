@@ -22,7 +22,7 @@ class Settings extends Page {
   }
 
   render() {
-  	const { totalCost } = this.props;
+    const { totalCost } = this.props;
 
     return (
       <SettingsContainer>
@@ -38,6 +38,6 @@ class Settings extends Page {
       </SettingsContainer>
     );
   }
-};
+}
 
 export default Settings;

@@ -29,6 +29,6 @@ class Home extends Page {
       </PageContainer>
     );
   }
-};
+}
 
 export default Home;

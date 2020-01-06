@@ -9,15 +9,15 @@ import Search from "./Search";
 
 const mapStateToProps = (state) => {
   return {
-  	message: state.main.message,
+    message: state.main.message,
     searchResults: state.search.searchResults
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-    	search: (params) => {Api.search(dispatch, params);},
-    	clear: () => {dispatch(clear());}
+    search: (params) => {Api.search(dispatch, params);},
+    clear: () => {dispatch(clear());}
 	};
 };
 
