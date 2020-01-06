@@ -36,7 +36,7 @@ export class Menu extends React.PureComponent {
           </Navbar.Brand>
   				<MenuNavbar.Toggle onClick={this.toggleOnClick}/>
   				<MenuNavbar.Collapse>
-          <Nav className="mr-auto"/>
+            <Nav className="mr-auto"/>
             <Nav>
               <Nav.Link as="div">
                 <MenuLink to="/search" onClick={this.toggleOnClick}>

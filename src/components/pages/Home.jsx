@@ -19,7 +19,7 @@ class Home extends Page {
           fluid />
         <h3>Haas & Milan</h3>
         <p>
-          A serverless React application
+          Serverless React applications
         </p>
         {message && 
           <Alert variant="danger">
