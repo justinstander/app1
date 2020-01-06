@@ -3,9 +3,14 @@ import Lambda from 'aws-sdk/clients/lambda';
 import { 
   totalCostChanged,
   apiError
-} from "./actions";
+} from "./actions/main";
+
+import {
+  searchComplete
+} from "./actions/search"
 
 const GET_TOTAL_COST = "haasandmilan-api-getTotalCost";
+const SEARCH = "haasandmilan-api-search";
 
 const logError = (message) => {
   console.error('Api', message);
@@ -30,10 +35,12 @@ const getPayload = (data) => {
  * LogType: None | Tail,
  * Qualifier: 'STRING_VALUE'
  */
-const invoke = async (dispatch, FunctionName, Payload) => {
+const invoke = async (dispatch, FunctionName, params) => {
+  dispatch(apiError(null))
+
   return await lambda.invoke({
     FunctionName,
-    Payload
+    Payload: JSON.stringify(params)
   }).promise().catch((error) => {
     logError(error.message);
     dispatch(apiError(error.message));
@@ -41,11 +48,18 @@ const invoke = async (dispatch, FunctionName, Payload) => {
 };
 
 const getTotalCost = async (dispatch, params=null) => {
-  const data = await invoke(dispatch, GET_TOTAL_COST, JSON.stringify(params));
-  
-  if (data) {
-    dispatch(totalCostChanged(getPayload(data)));
-  }
+  const data = await invoke(dispatch, GET_TOTAL_COST, params);
+
+  dispatch(totalCostChanged(getPayload(data)));
 };
 
-export default { getTotalCost };
+const search = async (dispatch, params=null) => {
+  const data = await invoke(dispatch, SEARCH, params);
+
+  dispatch(searchComplete(getPayload(data)));
+}
+
+export default { 
+  getTotalCost,
+  search
+};

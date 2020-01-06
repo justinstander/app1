@@ -15,7 +15,7 @@ class Home extends Page {
     return (
       <PageContainer>
         <PageImage
-          srcSet={`haasandmilan-576w.jpg 576w, haasandmilan-768w.jpg 768w, haasandmilan-992w.jpg 992w, haasandmilan-1200w.jpg 1200w`}
+          srcSet="haasandmilan-576w.jpg 576w, haasandmilan-768w.jpg 768w, haasandmilan-992w.jpg 992w, haasandmilan-1200w.jpg 1200w"
           fluid />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Vulputate mi sit amet mauris commodo. Nibh tortor id aliquet lectus proin nibh. Nibh cras pulvinar mattis nunc. Enim diam vulputate ut pharetra sit amet aliquam. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Id venenatis a condimentum vitae sapien pellentesque habitant morbi. Suspendisse potenti nullam ac tortor. Ornare aenean euismod elementum nisi. Fermentum dui faucibus in ornare quam viverra. Pellentesque habitant morbi tristique senectus et.

@@ -1,7 +1,7 @@
 import {
 	API_ERROR,
 	TOTAL_COST_CHANGED
-} from "../actions";
+} from "../actions/main";
 
 const initialState = {
 	totalCost: "$",
@@ -19,7 +19,6 @@ export default (state, action) => {
 		case API_ERROR:
 			return {...state, message: action.message};
 		default:
-			console.log(action.type);
 			return state;
 	}
 };
