@@ -29,7 +29,7 @@ afterEach(() => {
  div = null;
 });
 
-it('should create an About page', () => {
+it("should create an About page", () => {
 	ReactDOM.render(
 		<Provider store={createStore(rootReducer)}>
 			<Router>

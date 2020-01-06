@@ -1,6 +1,6 @@
 import React from "react";
 
-import Alert from 'react-bootstrap/Alert'
+import Alert from "react-bootstrap/Alert";
 
 import Page from "./Page";
 import {

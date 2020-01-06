@@ -1,4 +1,4 @@
-import Lambda from 'aws-sdk/clients/lambda';
+import Lambda from "aws-sdk/clients/lambda";
 
 import { 
   totalCostChanged,
@@ -13,7 +13,7 @@ const GET_TOTAL_COST = "haasandmilan-api-getTotalCost";
 const SEARCH = "haasandmilan-api-search";
 
 const logError = (message) => {
-  console.error('Api', message);
+  console.error("Api", message);
 };
 
 const lambda = new Lambda({
@@ -29,12 +29,6 @@ const getPayload = (data) => {
   return null;
 };
 
-/**
- * ClientContext: 'STRING_VALUE',
- * InvocationType: Event | RequestResponse | DryRun,
- * LogType: None | Tail,
- * Qualifier: 'STRING_VALUE'
- */
 const invoke = async (dispatch, FunctionName, params) => {
   dispatch(apiError(null))
 

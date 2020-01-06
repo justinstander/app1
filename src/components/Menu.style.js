@@ -1,10 +1,10 @@
 import {
   Link
-} from 'react-router-dom';
+} from "react-router-dom";
 
 import styled from "styled-components";
 
-import Navbar from 'react-bootstrap/Navbar';
+import Navbar from "react-bootstrap/Navbar";
 
 export const MenuNavbar = styled(Navbar)`
   width: 100%;
