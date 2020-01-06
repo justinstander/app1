@@ -3,9 +3,9 @@ import React from "react";
 import Badge from "react-bootstrap/Badge";
 
 import Page from "./Page";
-import {PageContainer} from "./Page.style";
 
 import {
+  SettingsContainer,
   SettingsRow,
   SettingsLabelCol,
   SettingsValueCol
@@ -25,17 +25,17 @@ class Settings extends Page {
   	const { totalCost } = this.props;
 
     return (
-      <PageContainer>
+      <SettingsContainer>
         <h3>About</h3>
         <SettingsRow>
           <SettingsLabelCol>
-            AWS Cost:
+            This Month's Total AWS Cost:
           </SettingsLabelCol>
           <SettingsValueCol>
             <Badge variant="success">{totalCost}</Badge>
           </SettingsValueCol>
         </SettingsRow>
-      </PageContainer>
+      </SettingsContainer>
     );
   }
 };

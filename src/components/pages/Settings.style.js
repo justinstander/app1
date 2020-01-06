@@ -3,12 +3,13 @@ import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import {PageContainer} from "./Page.style";
+
 export const SettingsRow = styled(Row)`
-	width: 100%;
+	align-items: center;
 `;
 
 export const SettingsCol = styled(Col)`
-	font-size: .93em;
 `;
 
 export const SettingsLabelCol = styled(SettingsCol)`
@@ -17,4 +18,8 @@ export const SettingsLabelCol = styled(SettingsCol)`
 
 export const SettingsValueCol = styled(SettingsCol)`
 	text-align: left;
+`;
+
+export const SettingsContainer = styled(PageContainer)`
+	text-align: center;
 `;

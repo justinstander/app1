@@ -61,6 +61,7 @@ class Search extends Page {
 
 		return(
 			<PageContainer>
+				<h3>Search</h3>
 				{message && 
           			<Alert variant="danger">
             			{message}
@@ -88,12 +89,15 @@ class Search extends Page {
       						Clear
       				</SearchButton>
     			</SearchForm>
-    			{searchResults &&
+    			{searchResults && 
     				<SearchResults>
     					<h4>Search Results</h4>
     					{searchResults.map((result, i) => {
     						return (<p key={i}>{`${result.AwsRequestId.S}: ${result.Total.S}`}</p>);
     					})}
+    					{searchResults.length === 0 &&
+    						<p>No results found</p>
+    					}
     				</SearchResults>
     			}
 			</PageContainer>
