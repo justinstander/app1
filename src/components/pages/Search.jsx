@@ -34,7 +34,7 @@ class Search extends Page {
       search: event.target.value,
       searchDisabled: isValueEmpty,
       clearDisabled: isValueEmpty && this.state.search === ""
-    })
+    });
   }
 
   onClearClick(event) {
@@ -99,7 +99,7 @@ class Search extends Page {
           </SearchResults>
         }
       </PageContainer>
-    )
+    );
   }
 }
 

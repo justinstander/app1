@@ -3,4 +3,4 @@ export const CLEAR = "clear";
 
 export const searchComplete = (searchResults) => ({ type: SEARCH_COMPLETE, searchResults });
 
-export const clear = () =>({ type: CLEAR });
+export const clear = () => ({ type: CLEAR });
