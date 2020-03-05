@@ -26,16 +26,16 @@ export class Menu extends React.PureComponent {
     this.setState({expanded:false});
   }
 
-	render() {
-		return (
-			<MenuNavbar expanded={this.state.expanded} bg="dark" variant="dark" expand="md" fixed="top">
+  render() {
+    return (
+      <MenuNavbar expanded={this.state.expanded} bg="dark" variant="dark" expand="md" fixed="top">
           <Navbar.Brand>
             <MenuLink to="/" onClick={this.closeOnClick}>
               Haas & Milan
             </MenuLink>
           </Navbar.Brand>
-  				<MenuNavbar.Toggle onClick={this.toggleOnClick}/>
-  				<MenuNavbar.Collapse>
+          <MenuNavbar.Toggle onClick={this.toggleOnClick}/>
+          <MenuNavbar.Collapse>
             <Nav className="mr-auto"/>
             <Nav>
               <Nav.Link as="div">
@@ -54,8 +54,8 @@ export class Menu extends React.PureComponent {
                 </MenuLink>
               </Nav.Link>
             </Nav>
-  				</MenuNavbar.Collapse>
-			</MenuNavbar>
-		);
-	}
+          </MenuNavbar.Collapse>
+      </MenuNavbar>
+    );
+  }
 }

@@ -11,9 +11,9 @@ let props = null;
 beforeAll(() => {
   ReactGA.initialize(process.env.REACT_APP_GA_ID, {testMode: true});
   props = {
-  	location: {
-  		pathname: "/Page"
-  	}
+    location: {
+      pathname: "/Page"
+    }
   };
 });
 
@@ -26,24 +26,10 @@ afterEach(() => {
  div = null;
 });
 
-it("should throw TypeError on a page without a location (without router)", () => {
-	const originalError = console.error;
-
-	console.error = () => {};
-
-	const page = <Page />;
-
-	expect(() => {
-		ReactDOM.render(page, div);
-	}).toThrow(TypeError);
-
-	console.error = originalError;
-});
-
 it("should create a page with a location (with router)", () => {
-	const pageWithLocation = <Page {...props} />;
+  const pageWithLocation = <Page {...props} />;
 
-	expect(() => {
-		ReactDOM.render(pageWithLocation, div);
-	}).not.toThrow(TypeError);
+  expect(() => {
+    ReactDOM.render(pageWithLocation, div);
+  }).not.toThrow(TypeError);
 });

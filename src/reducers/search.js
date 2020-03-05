@@ -1,23 +1,21 @@
+import { combineReducers } from "redux";
+
 import {
-	SEARCH_COMPLETE,
-	CLEAR
+  SEARCH_COMPLETE,
+  CLEAR
 } from "../actions/search";
 
-const initialState = {
-	searchResults: null
+const searchResults = (state = null, action) => {
+  switch(action.type) {
+    case SEARCH_COMPLETE:
+      return action.searchResults;
+    case CLEAR:
+      return null;
+    default:
+      return state;
+  }
 };
 
-export default (state, action) => {
-	if (typeof state === "undefined") {
-		return initialState;
-	}
-
-	switch(action.type) {
-		case SEARCH_COMPLETE:
-			return {...state, searchResults: action.searchResults};
-		case CLEAR:
-			return {...state, searchResults: null};
-		default:
-			return state;
-	}
-};
+export default combineReducers({
+  searchResults
+});

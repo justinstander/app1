@@ -1,3 +1,4 @@
+import _ from "lodash";
 import Lambda from "aws-sdk/clients/lambda";
 
 import { 
@@ -12,9 +13,7 @@ import {
 const GET_TOTAL_COST = "haasandmilan-api-getTotalCost";
 const SEARCH = "haasandmilan-api-search";
 
-const logError = (message) => {
-  console.error("Api", message);
-};
+const PROPERTY_PAYLOAD = "Payload";
 
 const lambda = new Lambda({
   region: process.env.REACT_APP_API_REGION,
@@ -23,8 +22,9 @@ const lambda = new Lambda({
 });
 
 const getPayload = (data) => {
-  if (data && data.Payload) {
-    return JSON.parse(data.Payload);
+  const payload = _.get(data, PROPERTY_PAYLOAD);
+  if (payload) {
+    return JSON.parse(payload);
   }
   return null;
 };
@@ -36,7 +36,6 @@ const invoke = async (dispatch, FunctionName, params) => {
     FunctionName,
     Payload: JSON.stringify(params)
   }).promise().catch((error) => {
-    logError(error.message);
     dispatch(apiError(error.message));
   });
 };
