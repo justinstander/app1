@@ -14,42 +14,56 @@ export class Menu extends React.PureComponent {
 
     this.state = {expanded: false};
 
-    this.toggleOnClick = this.toggleOnClick.bind(this);
-    this.closeOnClick = this.closeOnClick.bind(this);
+    this.menuLinkOnClick = this.menuLinkOnClick.bind(this);
+    this.menuNavbarOnToggle = this.menuNavbarOnToggle.bind(this);
   }
 
-  toggleOnClick(event) {
-    this.setState({expanded:!this.state.expanded});
+  menuLinkOnClick(event) {
+    this.setState({expanded: false});
   }
 
-  closeOnClick(event) {
-    this.setState({expanded:false});
+  menuNavbarOnToggle(event) {
+    this.setState({expanded: !this.state.expanded});
   }
 
   render() {
     return (
-      <MenuNavbar expanded={this.state.expanded} bg="dark" variant="dark" expand="md" fixed="top">
+      <MenuNavbar
+        bg="dark"
+        variant="dark"
+        expand="md"
+        fixed="top"
+        expanded={this.state.expanded}
+        onToggle={this.menuNavbarOnToggle} >
           <Navbar.Brand>
-            <MenuLink to="/" onClick={this.closeOnClick}>
+            <MenuLink
+              to="/"
+              onClick={this.menuLinkOnClick}>
               Haas & Milan
             </MenuLink>
           </Navbar.Brand>
-          <MenuNavbar.Toggle onClick={this.toggleOnClick}/>
+          <MenuNavbar.Toggle/>
           <MenuNavbar.Collapse>
             <Nav className="mr-auto"/>
             <Nav>
               <Nav.Link as="div">
-                <MenuLink to="/search" onClick={this.toggleOnClick}>
+                <MenuLink
+                  to="/search"
+                  onClick={this.menuLinkOnClick}>
                   Search
                 </MenuLink>
               </Nav.Link>
               <Nav.Link as="div">
-                <MenuLink to="/schedules" onClick={this.toggleOnClick}>
+                <MenuLink
+                to="/schedules"
+                onClick={this.menuLinkOnClick}>
                   Schedules
                 </MenuLink>
               </Nav.Link>
               <Nav.Link as="div">
-                <MenuLink to="/settings" onClick={this.toggleOnClick}>
+                <MenuLink
+                  to="/settings"
+                  onClick={this.menuLinkOnClick}>
                   Settings
                 </MenuLink>
               </Nav.Link>
