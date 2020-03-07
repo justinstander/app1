@@ -55,13 +55,6 @@ export class Menu extends React.PureComponent {
               </Nav.Link>
               <Nav.Link as="div">
                 <MenuLink
-                to="/schedules"
-                onClick={this.menuLinkOnClick}>
-                  Schedules
-                </MenuLink>
-              </Nav.Link>
-              <Nav.Link as="div">
-                <MenuLink
                   to="/settings"
                   onClick={this.menuLinkOnClick}>
                   Settings
