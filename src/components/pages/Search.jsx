@@ -18,8 +18,7 @@ class Search extends Page {
 
     this.state = {
       search: "",
-      searchDisabled: true,
-      clearDisabled: true
+      searchDisabled: true
     };
 
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -28,12 +27,11 @@ class Search extends Page {
   }
 
   onSearchChange(event) {
-    const isValueEmpty = event.target.value === "";
-    
+    const valueIsEmpty = event.target.value === "";
+
     this.setState({
       search: event.target.value,
-      searchDisabled: isValueEmpty,
-      clearDisabled: isValueEmpty
+      searchDisabled: valueIsEmpty
     });
   }
 
@@ -42,8 +40,7 @@ class Search extends Page {
 
     this.setState({
       search: "",
-      searchDisabled: true,
-      clearDisabled: true
+      searchDisabled: true
     });
   }
 
@@ -56,8 +53,15 @@ class Search extends Page {
   render() {
     const {
       message,
+      searching,
       searchResults
     } = this.props;
+    const {
+      search,
+      searchDisabled
+    } = this.state;
+
+    const disabled = searching || searchDisabled;
 
     return (
       <PageContainer>
@@ -69,19 +73,19 @@ class Search extends Page {
           <FormControl
             type="text"
             placeholder="Search"
-            value={this.state.search}
+            value={search}
             onChange={this.onSearchChange}
           />
           <SearchButton
             variant="primary"
-            disabled={this.state.searchDisabled}
+            disabled={disabled}
             type="submit"
           >
             Search
           </SearchButton>{" "}
           <SearchButton
             variant="secondary"
-            disabled={this.state.clearDisabled}
+            disabled={disabled}
             onClick={this.onClearClick}
           >
             Clear

@@ -7,6 +7,7 @@ import {
 } from "./actions/main";
 
 import {
+  searching,
   searchComplete
 } from "./actions/search";
 
@@ -43,10 +44,12 @@ const invoke = async (dispatch, FunctionName, params) => {
 const getTotalCost = async (dispatch, params=null) => {
   const data = await invoke(dispatch, GET_TOTAL_COST, params);
 
-  dispatch(totalCostChanged(getPayload(data)));
+  dispatch(totalCostChanged(getPayload(data))); 
 };
 
 const search = async (dispatch, params=null) => {
+  dispatch(searching());
+
   const data = await invoke(dispatch, SEARCH, params);
 
   dispatch(searchComplete(getPayload(data)));
