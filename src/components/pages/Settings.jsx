@@ -29,7 +29,7 @@ class Settings extends Page {
         <h3>About</h3>
         <SettingsRow>
           <SettingsLabelCol>
-            This Month's Total AWS Cost:
+            Lasts Month's Total AWS Cost:
           </SettingsLabelCol>
           <SettingsValueCol>
             <Badge variant="success">{totalCost}</Badge>
