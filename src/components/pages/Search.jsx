@@ -33,7 +33,7 @@ class Search extends Page {
     this.setState({
       search: event.target.value,
       searchDisabled: isValueEmpty,
-      clearDisabled: isValueEmpty && this.state.search === ""
+      clearDisabled: isValueEmpty
     });
   }
 
