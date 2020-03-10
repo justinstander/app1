@@ -5,21 +5,21 @@ import Col from "react-bootstrap/Col";
 
 import {PageContainer} from "./Page.style";
 
-export const SettingsRow = styled(Row)`
+export const AboutRow = styled(Row)`
 	align-items: center;
 `;
 
-export const SettingsCol = styled(Col)`
+export const AboutCol = styled(Col)`
 `;
 
-export const SettingsLabelCol = styled(SettingsCol)`
+export const AboutLabelCol = styled(AboutCol)`
 	text-align: right;
 `;
 
-export const SettingsValueCol = styled(SettingsCol)`
+export const AboutValueCol = styled(AboutCol)`
 	text-align: left;
 `;
 
-export const SettingsContainer = styled(PageContainer)`
+export const AboutContainer = styled(PageContainer)`
 	text-align: center;
 `;

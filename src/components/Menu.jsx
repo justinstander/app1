@@ -55,9 +55,9 @@ export class Menu extends React.PureComponent {
               </Nav.Link>
               <Nav.Link as="div">
                 <MenuLink
-                  to="/settings"
+                  to="/about"
                   onClick={this.menuLinkOnClick}>
-                  Settings
+                  About
                 </MenuLink>
               </Nav.Link>
             </Nav>

@@ -12,7 +12,7 @@ import rootReducer from "../../reducers";
 
 import ReactGA from "react-ga";
 
-import SettingsContainer from "./SettingsContainer";
+import AboutContainer from "./AboutContainer";
 
 let div = null;
 
@@ -33,7 +33,7 @@ it("should create an About page", () => {
 	ReactDOM.render(
 		<Provider store={createStore(rootReducer)}>
 			<Router>
-				<SettingsContainer />
+				<AboutContainer />
 			</Router>
 		</Provider>
 	,div);
