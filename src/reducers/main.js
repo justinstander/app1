@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 import {
   API_ERROR,
   TOTAL_COST_CHANGED
-} from "../actions/main";
+} from "../actions/Main";
 
 const totalCost = (state = "$", action) => {
   switch(action.type) {

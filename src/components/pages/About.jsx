@@ -22,7 +22,7 @@ class About extends Page {
   }
 
   render() {
-    const { totalCost } = this.props;
+    const { data } = this.props.totalCost;
 
     return (
       <AboutContainer>
@@ -32,7 +32,7 @@ class About extends Page {
             Last Month's Total AWS Cost:
           </AboutLabelCol>
           <AboutValueCol>
-            <Badge variant="success">{totalCost}</Badge>
+            <Badge variant="success">{data}</Badge>
           </AboutValueCol>
         </AboutRow>
       </AboutContainer>

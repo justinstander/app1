@@ -4,7 +4,7 @@ import {
   SEARCHING,
   SEARCH_COMPLETE,
   CLEAR
-} from "../actions/search";
+} from "../actions/Search";
 
 const searchResults = (state = null, action) => {
   switch(action.type) {
