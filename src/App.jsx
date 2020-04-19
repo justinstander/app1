@@ -7,7 +7,7 @@ import {
 
 import { Menu } from "./components/Menu";
 
-import HomeContainer from "./components/pages/HomeContainer";
+import { HomeContainer } from "./components/pages/home";
 import AboutContainer from "./components/pages/AboutContainer";
 import SearchContainer from "./components/pages/SearchContainer";
 

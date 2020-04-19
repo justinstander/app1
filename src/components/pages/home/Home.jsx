@@ -2,11 +2,11 @@ import React from "react";
 
 import Alert from "react-bootstrap/Alert";
 
-import Page from "./Page";
+import Page from "../Page";
 import {
   PageContainer,
   PageImage
-} from "./Page.style";
+} from "../Page.style";
 
 class Home extends Page {
   render() {
