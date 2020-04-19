@@ -8,7 +8,7 @@ import {
 import { Menu } from "./components/Menu";
 
 import { HomeContainer } from "./components/pages/home";
-import AboutContainer from "./components/pages/AboutContainer";
+import {AboutContainer} from "./components/pages/about";
 import SearchContainer from "./components/pages/SearchContainer";
 
 class App extends React.PureComponent {

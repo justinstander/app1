@@ -2,7 +2,7 @@ import React from "react";
 
 import Badge from "react-bootstrap/Badge";
 
-import Page from "./Page";
+import Page from "../Page";
 
 import {
   AboutContainer,

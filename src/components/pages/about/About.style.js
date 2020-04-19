@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import {PageContainer} from "./Page.style";
+import {PageContainer} from "../Page.style";
 
 export const AboutRow = styled(Row)`
 	align-items: center;
