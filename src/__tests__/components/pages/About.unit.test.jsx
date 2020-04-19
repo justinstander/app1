@@ -12,7 +12,7 @@ import rootReducer from "../../../reducers";
 
 import ReactGA from "react-ga";
 
-import AboutContainer from "../../../components/pages/AboutContainer";
+import {AboutContainer} from "../../../components/pages";
 
 let div = null;
 
