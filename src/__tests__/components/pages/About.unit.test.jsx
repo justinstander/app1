@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import rootReducer from "../../../reducers";
+import rootReducer from "../../../reducers/Root";
 
 import ReactGA from "react-ga";
 
