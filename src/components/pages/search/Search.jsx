@@ -5,8 +5,8 @@ import React from "react";
 import Alert from "react-bootstrap/Alert";
 import FormControl from "react-bootstrap/FormControl";
 
-import Page from "./Page";
-import {PageContainer} from "./Page.style";
+import Page from "../Page";
+import {PageContainer} from "../Page.style";
 
 import {
   SearchForm,

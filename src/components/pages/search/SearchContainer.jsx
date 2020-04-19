@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import Api from "../../api";
+import Api from "../../../api";
 
-import { clear } from "../../actions/Search";
+import { clear } from "../../../actions/Search";
 
 import Search from "./Search";
 
