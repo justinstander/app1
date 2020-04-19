@@ -36,7 +36,7 @@ const PATH_SEARCH = "search";
  */
 const headers = new Headers({
   "Content-Type": "application/json",
-  "Accept-Encoding": "gzip, deflate, br"
+  "Accept-Encoding": "gzip"
 });
 
 /**
@@ -51,8 +51,8 @@ const createRequest = (method, path, data=null) => (
   new Request(`${ENDPOINT}${path}`, {
     method,
     headers,
-    mode: 'cors',
-    cache: 'default',
+    mode: "cors",
+    cache: "default",
     credentials: "same-origin",
     redirect: "follow",
     body: data && JSON.stringify(data)
@@ -91,7 +91,6 @@ const search = async (dispatch, data=null) => {
   dispatch(searching());
 
   const json = await invoke(dispatch, METHOD_GET, `${PATH_SEARCH}?search=${data.search}`);
-  
   json && dispatch(searchComplete(json));
 };
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import React from "react";
 
 import Alert from "react-bootstrap/Alert";
@@ -12,6 +14,16 @@ import {
   SearchButton
 } from "./Search.style";
 
+/**
+ * path to the search results in props
+ * 
+ * @type {String}
+ */
+const PROPS_SEARCH_RESULTS_DATA = "searchResults.data";
+
+/**
+ * Search
+ */
 class Search extends Page {
   constructor() {
     super();
@@ -53,13 +65,13 @@ class Search extends Page {
   render() {
     const {
       message,
-      searching,
-      searchResults
+      searching
     } = this.props;
     const {
       search,
       searchDisabled
     } = this.state;
+    const data = _.get(this.props, PROPS_SEARCH_RESULTS_DATA);
 
     const disabled = searching || searchDisabled;
 
@@ -91,13 +103,13 @@ class Search extends Page {
             Clear
           </SearchButton>
         </SearchForm>
-        {searchResults && 
+        {data && 
           <SearchResults>
             <h4>Search Results</h4>
-            {searchResults.map((result, i) => {
+            {data.map((result, i) => {
               return (<p key={i}>{`${result.AwsRequestId.S}: ${result.Total.S}`}</p>);
             })}
-            {searchResults.length === 0 &&
+            {data.length === 0 &&
               <p>No results found</p>
             }
           </SearchResults>

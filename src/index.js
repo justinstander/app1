@@ -1,3 +1,5 @@
+import dotenv from 'dotenv'
+
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -12,6 +14,7 @@ import rootReducer from "./reducers";
 
 import App from "./App";
 
+dotenv.config();
 ReactGA.initialize(process.env.REACT_APP_GA_ID);
 
 ReactDOM.render(
