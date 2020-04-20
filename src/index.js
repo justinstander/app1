@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 
 import React from "react";
 import ReactDOM from "react-dom";

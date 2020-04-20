@@ -6,4 +6,4 @@ export {
   HomeContainer,
   AboutContainer,
   SearchContainer
-}
+};
