@@ -1,16 +1,12 @@
-import { 
-  totalCostChanged,
-  apiError
-} from "../actions/Main";
+import { apiError } from "../actions/Error";
+import { totalCostChanged } from "../actions/About";
 
 import {
   searching,
   searchComplete
 } from "../actions/Search";
 
-import {
-  METHOD_GET
-} from "./http";
+import { METHOD_GET } from "./http";
 
 /**
  * API End Point

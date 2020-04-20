@@ -1,9 +1,6 @@
 import { combineReducers } from "redux";
 
-import {
-  API_ERROR,
-  TOTAL_COST_CHANGED
-} from "../actions/Main";
+import { TOTAL_COST_CHANGED } from "../actions/About";
 
 const totalCost = (state = "$", action) => {
   switch(action.type) {
@@ -14,16 +11,6 @@ const totalCost = (state = "$", action) => {
   }
 };
 
-const message = (state = null, action) => {
-  switch(action.type) {
-    case API_ERROR:
-      return action.message;
-    default:
-      return state; 
-  }
-};
-
 export default combineReducers({
-  totalCost,
-  message
+  totalCost
 });

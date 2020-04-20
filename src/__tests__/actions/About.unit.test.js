@@ -1,12 +1,4 @@
-import * as Actions from "../../actions/main" ;
-
-it("test action method apiError returns API_ERROR action type", () => {
-	const message = "Testing 123";
-	expect(Actions.apiError(message)).toMatchObject({
-		type: Actions.API_ERROR,
-		message
-	});
-});
+import * as Actions from "../../actions/About" ;
 
 it("test action method getTotalCost returns GET_TOTAL_COST action type", () => {
 	expect(Actions.getTotalCost()).toMatchObject({
