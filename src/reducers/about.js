@@ -2,6 +2,13 @@ import { combineReducers } from "redux";
 
 import { TOTAL_COST_CHANGED } from "../actions/About";
 
+/**
+ * Total Cost
+ * 
+ * @param  {String} state  [description]
+ * @param  {[type]} action [description]
+ * @return {[type]}        [description]
+ */
 const totalCost = (state = "$", action) => {
   switch(action.type) {
     case TOTAL_COST_CHANGED:
@@ -11,6 +18,9 @@ const totalCost = (state = "$", action) => {
   }
 };
 
+/**
+ * 
+ */
 export default combineReducers({
   totalCost
 });
