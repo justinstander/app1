@@ -7,7 +7,7 @@ import About from "./About";
 
 const mapStateToProps = (state) => {
   return {
-    totalCost: state.main.totalCost
+    totalCost: state.about.totalCost
   };
 };
 

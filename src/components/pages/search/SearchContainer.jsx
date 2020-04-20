@@ -9,7 +9,7 @@ import Search from "./Search";
 
 const mapStateToProps = (state) => {
   return {
-    message: state.main.message,
+    message: state.error.message,
     ...state.search
   };
 };

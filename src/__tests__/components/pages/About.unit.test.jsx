@@ -8,11 +8,11 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import rootReducer from "../../../reducers/Root";
+import rootReducer from "../../../reducers";
 
 import ReactGA from "react-ga";
 
-import {AboutContainer} from "../../../components/pages";
+import { AboutContainer } from "../../../components/pages";
 
 let div = null;
 
