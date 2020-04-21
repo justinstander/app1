@@ -76,9 +76,9 @@ const invoke = async (dispatch, method, path, data=null) => {
 /**
  * Gets Total Cost
  * 
- * @param  {[type]} dispatch [description]
- * @param  {[type]} data     [description]
- * @return {[type]}          [description]
+ * @param  {Object}     dispatch  Redux dispatch
+ * @param  {Object}     data      Data
+ * @return {undefined}            
  */
 const getTotalCost = async (dispatch, data=null) => {
   const json = await invoke(dispatch, METHOD_GET, PATH_TOTAL_COST, data);
@@ -89,14 +89,19 @@ const getTotalCost = async (dispatch, data=null) => {
 /**
  * Calls Search
  * 
- * @param  {[type]} dispatch [description]
- * @param  {[type]} data     [description]
- * @return {[type]}          [description]
+ * @param  {Object}     dispatch  Redux dispatch
+ * @param  {Object}     data      Data
+ * @return {undefined}          
  */
 const search = async (dispatch, data=null) => {
   dispatch(searching());
 
-  const json = await invoke(dispatch, METHOD_GET, `${PATH_SEARCH}?search=${data.search}`);
+  const json = await invoke(
+    dispatch,
+    METHOD_GET,
+    `${PATH_SEARCH}?search=${data.search}`
+  );
+
   json && dispatch(searchComplete(json));
 };
 

@@ -12,6 +12,9 @@ import {
  * Home Page
  */
 class Home extends Page {
+  /**
+   * @inheritDoc
+   */
   render() {
     const { message } = this.props;
 
