@@ -5,9 +5,9 @@ import { CLEAR, SEARCHING, SEARCH_COMPLETE } from "../actions/Search";
 /**
  * Search Results
  * 
- * @param  {[type]} state  [description]
- * @param  {[type]} action [description]
- * @return {[type]}        [description]
+ * @param  {Object} state
+ * @param  {Object} action 
+ * @return {Object}       
  */
 const searchResults = (state = null, action) => {
   switch(action.type) {
@@ -24,9 +24,9 @@ const searchResults = (state = null, action) => {
 /**
  *  Searching Flag
  * 
- * @param  {Boolean} state  [description]
- * @param  {[type]}  action [description]
- * @return {[type]}         [description]
+ * @param  {Boolean} state 
+ * @param  {Object}  action
+ * @return {Boolean}        
  */
 const searching = (state = false, action) => {
   switch(action.type) {

@@ -73,12 +73,26 @@ const invoke = async (dispatch, method, path, data=null) => {
   });
 };
 
+/**
+ * Gets Total Cost
+ * 
+ * @param  {[type]} dispatch [description]
+ * @param  {[type]} data     [description]
+ * @return {[type]}          [description]
+ */
 const getTotalCost = async (dispatch, data=null) => {
   const json = await invoke(dispatch, METHOD_GET, PATH_TOTAL_COST, data);
   
   json && dispatch(totalCostChanged(json)); 
 };
 
+/**
+ * Calls Search
+ * 
+ * @param  {[type]} dispatch [description]
+ * @param  {[type]} data     [description]
+ * @return {[type]}          [description]
+ */
 const search = async (dispatch, data=null) => {
   dispatch(searching());
 

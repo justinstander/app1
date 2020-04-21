@@ -11,19 +11,26 @@ import {
   AboutValueCol
 } from "./About.style";
 
+/**
+ * About Page
+ */
 class About extends Page {
+  /**
+   * Fetches the total cost if needed
+   * @return {undefined}
+   */
   componentDidMount() {
     super.componentDidMount();
 
-    const { totalCost } = this.props;
-    if( totalCost === "$" ) {
+    if( this.props.totalCost === "$" ) {
       this.props.getTotalCost();
     }
   }
 
+  /**
+   * @inheritDoc
+   */
   render() {
-    const { data } = this.props.totalCost;
-
     return (
       <AboutContainer>
         <h3>About</h3>
@@ -32,7 +39,7 @@ class About extends Page {
             Last Month's Total AWS Cost:
           </AboutLabelCol>
           <AboutValueCol>
-            <Badge variant="success">{data}</Badge>
+            <Badge variant="success">{this.props.totalCost.data}</Badge>
           </AboutValueCol>
         </AboutRow>
       </AboutContainer>

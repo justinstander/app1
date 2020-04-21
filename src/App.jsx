@@ -13,6 +13,9 @@ import {
 
 import { Menu } from "./components/Menu";
 
+/**
+ * Application
+ */
 class App extends React.PureComponent {
   render() {
     return (

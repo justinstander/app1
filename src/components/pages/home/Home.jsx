@@ -8,6 +8,9 @@ import {
   PageImage
 } from "../Page.style";
 
+/**
+ * Home Page
+ */
 class Home extends Page {
   render() {
     const { message } = this.props;

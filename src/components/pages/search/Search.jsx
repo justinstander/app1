@@ -6,7 +6,7 @@ import Alert from "react-bootstrap/Alert";
 import FormControl from "react-bootstrap/FormControl";
 
 import Page from "../Page";
-import {PageContainer} from "../Page.style";
+import { PageContainer } from "../Page.style";
 
 import {
   SearchForm,
@@ -22,9 +22,13 @@ import {
 const PROPS_SEARCH_RESULTS_DATA = "searchResults.data";
 
 /**
- * Search
+ * Search Page
  */
 class Search extends Page {
+  /**
+   * @constructor
+   * @return {[type]} [description]
+   */
   constructor() {
     super();
 
@@ -38,15 +42,25 @@ class Search extends Page {
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
 
+  /**
+   * Handles change in search field value
+   * 
+   * @param  {Object}     event 
+   * @return {undefined}
+   */
   onSearchChange(event) {
-    const valueIsEmpty = event.target.value === "";
-
     this.setState({
       search: event.target.value,
-      searchDisabled: valueIsEmpty
+      searchDisabled: event.target.value === ""
     });
   }
 
+  /**
+   * Handles clear button click
+   * 
+   * @param  {Object}     event 
+   * @return {undefined}
+   */
   onClearClick(event) {
     this.props.clear();
 
@@ -56,12 +70,21 @@ class Search extends Page {
     });
   }
 
+  /**
+   * Handles search form submission
+   *  
+   * @param  {Object}     event 
+   * @return {undefined}
+   */
   onSearchSubmit(event) {
     event.preventDefault();
     
     this.props.search({search: this.state.search});
   }
 
+  /**
+   * @inheritDoc
+   */
   render() {
     const {
       message,
@@ -107,7 +130,11 @@ class Search extends Page {
           <SearchResults>
             <h4>Search Results</h4>
             {data.map((result, i) => {
-              return (<p key={i}>{`${result.AwsRequestId.S}: ${result.Total.S}`}</p>);
+              return (
+                <p key={i}>
+                  {`${result.AwsRequestId.S}: ${result.Total.S}`}
+                </p>
+              );
             })}
             {data.length === 0 &&
               <p>No results found</p>

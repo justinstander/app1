@@ -5,9 +5,9 @@ import { TOTAL_COST_CHANGED } from "../actions/About";
 /**
  * Total Cost
  * 
- * @param  {String} state  [description]
- * @param  {[type]} action [description]
- * @return {[type]}        [description]
+ * @param  {String} state
+ * @param  {Object} action
+ * @return {String}
  */
 const totalCost = (state = "$", action) => {
   switch(action.type) {
@@ -19,7 +19,7 @@ const totalCost = (state = "$", action) => {
 };
 
 /**
- * 
+ * about
  */
 export default combineReducers({
   totalCost

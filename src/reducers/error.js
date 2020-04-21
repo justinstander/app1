@@ -5,9 +5,9 @@ import { API_ERROR } from "../actions/Error";
 /**
  * Error Message
  * 
- * @param  {[type]} state  [description]
- * @param  {[type]} action [description]
- * @return {[type]}        [description]
+ * @param  {String} state  
+ * @param  {Object} action 
+ * @return {String}        
  */
 const message = (state = null, action) => {
   switch(action.type) {
@@ -19,7 +19,7 @@ const message = (state = null, action) => {
 };
 
 /**
- * 
+ * error
  */
 export default combineReducers({
   message
