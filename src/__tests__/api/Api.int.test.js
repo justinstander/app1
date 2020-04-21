@@ -1,7 +1,8 @@
-import configureMockStore from 'redux-mock-store'
+import configureMockStore from "redux-mock-store";
 
 const mockStore = configureMockStore();
-const store = mockStore({ todos: [] })
+const mockState = {};
+const store = mockStore(mockState);
 
 import Api from "../../api" ;
 

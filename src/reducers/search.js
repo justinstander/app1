@@ -1,10 +1,6 @@
 import { combineReducers } from "redux";
 
-import {
-  CLEAR,
-  SEARCHING,
-  SEARCH_COMPLETE
-} from "../actions/Search";
+import { CLEAR, SEARCHING, SEARCH_COMPLETE } from "../actions/Search";
 
 /**
  * Search Results

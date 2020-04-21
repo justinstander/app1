@@ -1,10 +1,6 @@
 import { apiError } from "../actions/Error";
 import { totalCostChanged } from "../actions/About";
-
-import {
-  searching,
-  searchComplete
-} from "../actions/Search";
+import { searching, searchComplete } from "../actions/Search";
 
 import { METHOD_GET } from "./http";
 
