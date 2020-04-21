@@ -1,5 +1,14 @@
-import * as Api from "../../api" ;
+import configureMockStore from 'redux-mock-store'
 
-xit("TODO: Write Tests", () => {
-	expect("Define Tests or Skip").toBeFalsy();
+const mockStore = configureMockStore();
+const store = mockStore({ todos: [] })
+
+import Api from "../../api" ;
+
+it("should return total cost", async () => {
+	expect(store).not.toBeNull();
+  expect(store.dispatch).toBeDefined();
+
+  // TODO: CORS for localhost
+  // const result = await Api.getTotalCost(store.dispatch);
 });

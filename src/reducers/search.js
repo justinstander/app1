@@ -45,7 +45,7 @@ const searching = (state = false, action) => {
 };
 
 /**
- * 
+ * search
  */
 export default combineReducers({
   searchResults,
