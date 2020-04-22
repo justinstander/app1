@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import ReactGA from "react-ga";
 
-import Page from "./Page";
+import Page from "../../../components/pages/Page";
 
 let div = null;
 let props = null;

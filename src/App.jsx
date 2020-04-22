@@ -5,12 +5,17 @@ import {
   Route
 } from "react-router-dom";
 
+import {
+  HomeContainer,
+  AboutContainer,
+  SearchContainer
+} from "./components/pages";
+
 import { Menu } from "./components/Menu";
 
-import HomeContainer from "./components/pages/HomeContainer";
-import AboutContainer from "./components/pages/AboutContainer";
-import SearchContainer from "./components/pages/SearchContainer";
-
+/**
+ * Application
+ */
 class App extends React.PureComponent {
   render() {
     return (

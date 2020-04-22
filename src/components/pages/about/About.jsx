@@ -2,7 +2,7 @@ import React from "react";
 
 import Badge from "react-bootstrap/Badge";
 
-import Page from "./Page";
+import Page from "../Page";
 
 import {
   AboutContainer,
@@ -11,19 +11,26 @@ import {
   AboutValueCol
 } from "./About.style";
 
+/**
+ * About Page
+ */
 class About extends Page {
+  /**
+   * Fetches the total cost if needed
+   * @return {undefined}
+   */
   componentDidMount() {
     super.componentDidMount();
 
-    const { totalCost } = this.props;
-    if( totalCost === "$" ) {
+    if( this.props.totalCost === "$" ) {
       this.props.getTotalCost();
     }
   }
 
+  /**
+   * @inheritDoc
+   */
   render() {
-    const { totalCost } = this.props;
-
     return (
       <AboutContainer>
         <h3>About</h3>
@@ -32,7 +39,7 @@ class About extends Page {
             Last Month's Total AWS Cost:
           </AboutLabelCol>
           <AboutValueCol>
-            <Badge variant="success">{totalCost}</Badge>
+            <Badge variant="success">{this.props.totalCost.data}</Badge>
           </AboutValueCol>
         </AboutRow>
       </AboutContainer>

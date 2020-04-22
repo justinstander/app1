@@ -5,7 +5,7 @@ import Home from "./Home";
 
 const mapStateToProps = (state) => {
   return {
-    message: state.main.message
+    message: state.error.message
   };
 };
 

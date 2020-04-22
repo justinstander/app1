@@ -1,11 +1,14 @@
 import { combineReducers } from "redux";
 
-import {
-  SEARCHING,
-  SEARCH_COMPLETE,
-  CLEAR
-} from "../actions/search";
+import { CLEAR, SEARCHING, SEARCH_COMPLETE } from "../actions/Search";
 
+/**
+ * Search Results
+ * 
+ * @param  {Object} state
+ * @param  {Object} action 
+ * @return {Object}       
+ */
 const searchResults = (state = null, action) => {
   switch(action.type) {
     case SEARCH_COMPLETE:
@@ -18,6 +21,13 @@ const searchResults = (state = null, action) => {
   }
 };
 
+/**
+ *  Searching Flag
+ * 
+ * @param  {Boolean} state 
+ * @param  {Object}  action
+ * @return {Boolean}        
+ */
 const searching = (state = false, action) => {
   switch(action.type) {
     case SEARCHING:
@@ -30,6 +40,9 @@ const searching = (state = false, action) => {
   }
 };
 
+/**
+ * search
+ */
 export default combineReducers({
   searchResults,
   searching

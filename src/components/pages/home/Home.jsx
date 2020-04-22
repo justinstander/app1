@@ -2,13 +2,19 @@ import React from "react";
 
 import Alert from "react-bootstrap/Alert";
 
-import Page from "./Page";
+import Page from "../Page";
 import {
   PageContainer,
   PageImage
-} from "./Page.style";
+} from "../Page.style";
 
+/**
+ * Home Page
+ */
 class Home extends Page {
+  /**
+   * @inheritDoc
+   */
   render() {
     const { message } = this.props;
 

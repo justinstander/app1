@@ -1,9 +1,14 @@
 import { combineReducers } from "redux";
 
-import main from "./main";
+import error from "./error";
+import about from "./about";
 import search from "./search";
 
+/**
+ * root
+ */
 export default combineReducers({
-  main,
+  error,
+  about,
   search
 });

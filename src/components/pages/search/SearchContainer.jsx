@@ -1,15 +1,15 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import Api from "../../Api";
+import Api from "../../../api";
 
-import { clear } from "../../actions/search";
+import { clear } from "../../../actions/Search";
 
 import Search from "./Search";
 
 const mapStateToProps = (state) => {
   return {
-    message: state.main.message,
+    message: state.error.message,
     ...state.search
   };
 };

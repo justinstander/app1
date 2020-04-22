@@ -8,11 +8,11 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import rootReducer from "../../reducers";
+import rootReducer from "../../../reducers";
 
 import ReactGA from "react-ga";
 
-import AboutContainer from "./AboutContainer";
+import { AboutContainer } from "../../../components/pages";
 
 let div = null;
 
@@ -36,5 +36,5 @@ it("should create an About page", () => {
 				<AboutContainer />
 			</Router>
 		</Provider>
-	,div);
+	, div);
 });

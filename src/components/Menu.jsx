@@ -8,6 +8,9 @@ import {
   MenuLink
 } from "./Menu.style";
 
+/**
+ * Navigation Menu
+ */
 export class Menu extends React.PureComponent {
   constructor(props) {
     super(props);
