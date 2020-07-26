@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -11,37 +11,25 @@ import {
 /**
  * Navigation Menu
  */
-export class Menu extends React.PureComponent {
-  constructor(props) {
-    super(props);
+export const Menu = (props) => {
+  const [expanded, setExpanded] = useState(false);
 
-    this.state = {expanded: false};
-
-    this.menuLinkOnClick = this.menuLinkOnClick.bind(this);
-    this.menuNavbarOnToggle = this.menuNavbarOnToggle.bind(this);
+  const menuLinkOnClick = (event) => {
+    setExpanded(false);
   }
 
-  menuLinkOnClick(event) {
-    this.setState({expanded: false});
-  }
-
-  menuNavbarOnToggle(event) {
-    this.setState({expanded: !this.state.expanded});
-  }
-
-  render() {
-    return (
+  return (
       <MenuNavbar
         bg="dark"
         variant="dark"
         expand="md"
         fixed="top"
-        expanded={this.state.expanded}
-        onToggle={this.menuNavbarOnToggle} >
+        expanded={expanded}
+        onToggle={() => setExpanded(!expanded)} >
           <Navbar.Brand>
             <MenuLink
               to="/"
-              onClick={this.menuLinkOnClick}>
+              onClick={menuLinkOnClick}>
               Haas & Milan
             </MenuLink>
           </Navbar.Brand>
@@ -52,14 +40,14 @@ export class Menu extends React.PureComponent {
               <Nav.Link as="div">
                 <MenuLink
                   to="/search"
-                  onClick={this.menuLinkOnClick}>
+                  onClick={menuLinkOnClick}>
                   Search
                 </MenuLink>
               </Nav.Link>
               <Nav.Link as="div">
                 <MenuLink
                   to="/about"
-                  onClick={this.menuLinkOnClick}>
+                  onClick={menuLinkOnClick}>
                   About
                 </MenuLink>
               </Nav.Link>
@@ -67,5 +55,4 @@ export class Menu extends React.PureComponent {
           </MenuNavbar.Collapse>
       </MenuNavbar>
     );
-  }
 }

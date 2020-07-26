@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 
 import {
-  HomeContainer,
-  AboutContainer,
-  SearchContainer
+  Home,
+  About,
+  Search
 } from "./components/pages";
 
 import { Menu } from "./components/Menu";
@@ -21,13 +21,13 @@ export default () => (
     <Menu />
     <Switch>
       <Route path="/search">
-        <SearchContainer />
+        <Search />
       </Route>
       <Route path="/about">
-        <AboutContainer />
+        <About />
       </Route>
       <Route path="/">
-        <HomeContainer />
+        <Home />
       </Route>
     </Switch>
   </Router>
