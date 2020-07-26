@@ -16,25 +16,19 @@ import { Menu } from "./components/Menu";
 /**
  * Application
  */
-class App extends React.PureComponent {
-  render() {
-    return (
-      <Router>
-        <Menu />
-        <Switch>
-          <Route path="/search">
-            <SearchContainer />
-          </Route>
-          <Route path="/about">
-            <AboutContainer />
-          </Route>
-          <Route path="/">
-            <HomeContainer />
-          </Route>
-        </Switch>
-      </Router>
-    );
-  }
-}
-
-export default App;
+export default () => (
+  <Router>
+    <Menu />
+    <Switch>
+      <Route path="/search">
+        <SearchContainer />
+      </Route>
+      <Route path="/about">
+        <AboutContainer />
+      </Route>
+      <Route path="/">
+        <HomeContainer />
+      </Route>
+    </Switch>
+  </Router>
+);

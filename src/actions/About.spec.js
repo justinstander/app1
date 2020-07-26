@@ -1,4 +1,4 @@
-import * as Actions from "../../actions/About" ;
+import * as Actions from "./About" ;
 
 it("test action method getTotalCost returns GET_TOTAL_COST action type", () => {
 	expect(Actions.getTotalCost()).toMatchObject({
