@@ -1,8 +1,8 @@
-import React,{ useState } from "react";
-
+import React,{ useState, useEffect } from "react";
+import { withRouter } from 'react-router-dom';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-
+import ReactGA from "react-ga";
 import {
   MenuNavbar,
   MenuLink
@@ -11,8 +11,13 @@ import {
 /**
  * Navigation Menu
  */
-export const Menu = (props) => {
+export const Menu = withRouter((props) => {
+  const { pathname } = props.location;
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    pathname && ReactGA.pageview(pathname);
+  }, [pathname])
 
   const menuLinkOnClick = (event) => {
     setExpanded(false);
@@ -55,4 +60,4 @@ export const Menu = (props) => {
           </MenuNavbar.Collapse>
       </MenuNavbar>
     );
-}
+})
