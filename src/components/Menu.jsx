@@ -44,6 +44,13 @@ export const Menu = withRouter((props) => {
             <Nav>
               <Nav.Link as="div">
                 <MenuLink
+                  to="/chat"
+                  onClick={menuLinkOnClick}>
+                  Chat
+                </MenuLink>
+              </Nav.Link>
+              <Nav.Link as="div">
+                <MenuLink
                   to="/search"
                   onClick={menuLinkOnClick}>
                   Search

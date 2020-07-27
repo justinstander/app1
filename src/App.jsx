@@ -8,7 +8,8 @@ import {
 import {
   Home,
   About,
-  Search
+  Search,
+  Chat
 } from "./components/pages";
 
 import { Menu } from "./components/Menu";
@@ -20,6 +21,9 @@ export default () => (
   <Router>
     <Menu />
     <Switch>
+      <Route path="/chat">
+        <Chat />
+      </Route>
       <Route path="/search">
         <Search />
       </Route>
