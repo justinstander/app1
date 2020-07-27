@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux"
-import Api from "../../../api"
+import Api from "../../../api";
 import Badge from "react-bootstrap/Badge";
 
 import {
@@ -11,12 +11,12 @@ import {
 } from "./About.style";
 
 export default (props) => {
-  const { totalCost } = useSelector((state) => state.about)
+  const { totalCost } = useSelector((state) => state.about);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if( totalCost === "$" ) {
-      dispatch(Api.getTotalCost())
+      dispatch(Api.getTotalCost());
     }
   })
 

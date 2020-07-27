@@ -12,7 +12,7 @@ import {
  * Home Page
  */
 export default (props) => {
-  const { message } = useSelector((state) => state.error)
+  const { message } = useSelector((state) => state.error);
 
   return (
     <PageContainer>

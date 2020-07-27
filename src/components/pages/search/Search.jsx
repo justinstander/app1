@@ -8,7 +8,7 @@ import FormControl from "react-bootstrap/FormControl";
 
 import { PageContainer } from "../Page.style";
 import { clear } from "../../../actions/Search";
-import Api from "../../../api"
+import Api from "../../../api";
 import {
   SearchForm,
   SearchResults,
@@ -18,9 +18,9 @@ import {
 const PROPS_SEARCH_RESULTS_DATA = "searchResults.data";
 
 export default (props) => {
-  const dispatch = useDispatch()
-  const [search, setSearch] = useState("")
-  const [searchDisabled, setSearchDisabled] = useState(true)
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+  const [searchDisabled, setSearchDisabled] = useState(true);
 
   /**
    * Handles change in search field value
@@ -29,8 +29,8 @@ export default (props) => {
    * @return {undefined}
    */
   const onSearchChange = (event) => {
-    setSearch(event.target.value)
-    setSearchDisabled(event.target.value === "")
+    setSearch(event.target.value);
+    setSearchDisabled(event.target.value === "");
   }
 
   /**
@@ -40,9 +40,9 @@ export default (props) => {
    * @return {undefined}
    */
   const onClearClick = (event) => {
-    dispatch(clear())
-    setSearch("")
-    setSearchDisabled(true)
+    dispatch(clear());
+    setSearch("");
+    setSearchDisabled(true);
   }
 
   /**
@@ -53,7 +53,7 @@ export default (props) => {
    */
   const onSearchSubmit = (event) => {
     event.preventDefault();
-    dispatch(Api.search({search}))
+    dispatch(Api.search({search}));
   }
 
   const {
@@ -64,7 +64,7 @@ export default (props) => {
     ...state.search
   }));
 
-  const data = useSelector((state) => _.get(state.search, PROPS_SEARCH_RESULTS_DATA))
+  const data = useSelector((state) => _.get(state.search, PROPS_SEARCH_RESULTS_DATA));
   const disabled = searching || searchDisabled;
 
   return (
