@@ -3,8 +3,6 @@ import {useSelector} from "react-redux";
 
 import Alert from "react-bootstrap/Alert";
 
-// TODO: Reconnect Google Analytics to page views
-// import Page from "../Page";
 import {
   PageContainer,
   PageImage

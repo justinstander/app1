@@ -3,8 +3,6 @@ import {useSelector, useDispatch} from "react-redux"
 import Api from "../../../api"
 import Badge from "react-bootstrap/Badge";
 
-// TODO: Google analytics page view
-
 import {
   AboutContainer,
   AboutRow,

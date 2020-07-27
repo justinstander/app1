@@ -6,7 +6,6 @@ import {useSelector,useDispatch} from "react-redux";
 import Alert from "react-bootstrap/Alert";
 import FormControl from "react-bootstrap/FormControl";
 
-// TODO: Google Analytics Page View
 import { PageContainer } from "../Page.style";
 import { clear } from "../../../actions/Search";
 import Api from "../../../api"
