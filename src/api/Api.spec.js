@@ -4,7 +4,7 @@ const mockStore = configureMockStore();
 const mockState = {};
 const store = mockStore(mockState);
 
-import Api from "../../api" ;
+import Api from "./" ;
 
 it("should return total cost", async () => {
 	expect(store).not.toBeNull();

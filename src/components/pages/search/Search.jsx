@@ -1,46 +1,26 @@
 import _ from "lodash";
 
-import React from "react";
+import React,{useState} from "react";
+import {useSelector,useDispatch} from "react-redux";
 
 import Alert from "react-bootstrap/Alert";
 import FormControl from "react-bootstrap/FormControl";
 
-import Page from "../Page";
 import { PageContainer } from "../Page.style";
-
+import { clear } from "../../../actions/Search";
+import Api from "../../../api";
 import {
   SearchForm,
   SearchResults,
   SearchButton
 } from "./Search.style";
 
-/**
- * path to the search results in props
- * 
- * @type {String}
- */
 const PROPS_SEARCH_RESULTS_DATA = "searchResults.data";
 
-/**
- * Search Page
- */
-class Search extends Page {
-  /**
-   * @constructor
-   * @return {[type]} [description]
-   */
-  constructor() {
-    super();
-
-    this.state = {
-      search: "",
-      searchDisabled: true
-    };
-
-    this.onSearchChange = this.onSearchChange.bind(this);
-    this.onClearClick = this.onClearClick.bind(this);
-    this.onSearchSubmit = this.onSearchSubmit.bind(this);
-  }
+export default (props) => {
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+  const [searchDisabled, setSearchDisabled] = useState(true);
 
   /**
    * Handles change in search field value
@@ -48,11 +28,9 @@ class Search extends Page {
    * @param  {Object}     event 
    * @return {undefined}
    */
-  onSearchChange(event) {
-    this.setState({
-      search: event.target.value,
-      searchDisabled: event.target.value === ""
-    });
+  const onSearchChange = (event) => {
+    setSearch(event.target.value);
+    setSearchDisabled(event.target.value === "");
   }
 
   /**
@@ -61,13 +39,10 @@ class Search extends Page {
    * @param  {Object}     event 
    * @return {undefined}
    */
-  onClearClick(event) {
-    this.props.clear();
-
-    this.setState({
-      search: "",
-      searchDisabled: true
-    });
+  const onClearClick = (event) => {
+    dispatch(clear());
+    setSearch("");
+    setSearchDisabled(true);
   }
 
   /**
@@ -76,74 +51,65 @@ class Search extends Page {
    * @param  {Object}     event 
    * @return {undefined}
    */
-  onSearchSubmit(event) {
+  const onSearchSubmit = (event) => {
     event.preventDefault();
-    
-    this.props.search({search: this.state.search});
+    dispatch(Api.search({search}));
   }
 
-  /**
-   * @inheritDoc
-   */
-  render() {
-    const {
-      message,
-      searching
-    } = this.props;
-    const {
-      search,
-      searchDisabled
-    } = this.state;
-    const data = _.get(this.props, PROPS_SEARCH_RESULTS_DATA);
+  const {
+    message,
+    searching
+  } = useSelector((state) => ({
+    message: state.error.message,
+    ...state.search
+  }));
 
-    const disabled = searching || searchDisabled;
+  const data = useSelector((state) => _.get(state.search, PROPS_SEARCH_RESULTS_DATA));
+  const disabled = searching || searchDisabled;
 
-    return (
-      <PageContainer>
-        <h3>Search</h3>
-        {message && 
-          <Alert variant="danger">{message}</Alert>
-        }
-        <SearchForm onSubmit={this.onSearchSubmit}>
-          <FormControl
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={this.onSearchChange}
-          />
-          <SearchButton
-            variant="primary"
-            disabled={disabled}
-            type="submit"
-          >
-            Search
-          </SearchButton>{" "}
-          <SearchButton
-            variant="secondary"
-            disabled={disabled}
-            onClick={this.onClearClick}
-          >
-            Clear
-          </SearchButton>
-        </SearchForm>
-        {data && 
-          <SearchResults>
-            <h4>Search Results</h4>
-            {data.map((result, i) => {
-              return (
-                <p key={i}>
-                  {`${result.AwsRequestId.S}: ${result.Total.S}`}
-                </p>
-              );
-            })}
-            {data.length === 0 &&
-              <p>No results found</p>
-            }
-          </SearchResults>
-        }
-      </PageContainer>
-    );
-  }
-}
-
-export default Search;
+  return (
+    <PageContainer>
+      <h3>Search</h3>
+      {message && 
+        <Alert variant="danger">{message}</Alert>
+      }
+      <SearchForm onSubmit={onSearchSubmit}>
+        <FormControl
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={onSearchChange}
+        />
+        <SearchButton
+          variant="primary"
+          disabled={disabled}
+          type="submit"
+        >
+          Search
+        </SearchButton>{" "}
+        <SearchButton
+          variant="secondary"
+          disabled={disabled}
+          onClick={onClearClick}
+        >
+          Clear
+        </SearchButton>
+      </SearchForm>
+      {data && 
+        <SearchResults>
+          <h4>Search Results</h4>
+          {data.map((result, i) => {
+            return (
+              <p key={i}>
+                {`${result.AwsRequestId.S}: ${result.Total.S}`}
+              </p>
+            );
+          })}
+          {data.length === 0 &&
+            <p>No results found</p>
+          }
+        </SearchResults>
+      }
+    </PageContainer>
+  );
+};

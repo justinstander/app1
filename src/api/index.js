@@ -80,7 +80,7 @@ const invoke = async (dispatch, method, path, data=null) => {
  * @param  {Object}     data      Data
  * @return {undefined}            
  */
-const getTotalCost = async (dispatch, data=null) => {
+const getTotalCost = (data=null) => async (dispatch) => {
   const json = await invoke(dispatch, METHOD_GET, PATH_TOTAL_COST, data);
   
   json && dispatch(totalCostChanged(json)); 
@@ -93,7 +93,7 @@ const getTotalCost = async (dispatch, data=null) => {
  * @param  {Object}     data      Data
  * @return {undefined}          
  */
-const search = async (dispatch, data=null) => {
+const search = (data=null) => async (dispatch) => {
   dispatch(searching());
 
   const json = await invoke(

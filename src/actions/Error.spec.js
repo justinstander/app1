@@ -1,4 +1,4 @@
-import * as Actions from "../../actions/Error" ;
+import * as Actions from "./Error" ;
 
 it("test action method apiError returns API_ERROR action type", () => {
 	const message = "Testing 123";

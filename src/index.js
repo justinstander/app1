@@ -9,16 +9,15 @@ import "./index.css";
 import ReactGA from "react-ga";
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import store from "./store";
 
-import rootReducer from "./reducers";
 import App from "./App";
 
 dotenv.config();
 ReactGA.initialize(process.env.REACT_APP_GA_ID);
 
 ReactDOM.render(
-	<Provider store={createStore(rootReducer)}>
+	<Provider store={store}>
 		<App />
 	</Provider>,
 	document.getElementById("root")

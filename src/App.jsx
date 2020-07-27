@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 
 import {
-  HomeContainer,
-  AboutContainer,
-  SearchContainer
+  Home,
+  About,
+  Search
 } from "./components/pages";
 
 import { Menu } from "./components/Menu";
@@ -16,25 +16,19 @@ import { Menu } from "./components/Menu";
 /**
  * Application
  */
-class App extends React.PureComponent {
-  render() {
-    return (
-      <Router>
-        <Menu />
-        <Switch>
-          <Route path="/search">
-            <SearchContainer />
-          </Route>
-          <Route path="/about">
-            <AboutContainer />
-          </Route>
-          <Route path="/">
-            <HomeContainer />
-          </Route>
-        </Switch>
-      </Router>
-    );
-  }
-}
-
-export default App;
+export default () => (
+  <Router>
+    <Menu />
+    <Switch>
+      <Route path="/search">
+        <Search />
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </Router>
+);

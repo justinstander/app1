@@ -7,12 +7,10 @@ import {
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-
-import rootReducer from "../../../reducers";
-
+import store from "../../../store";
 import ReactGA from "react-ga";
 
-import { AboutContainer } from "../../../components/pages";
+import { About } from "../../../components/pages";
 
 let div = null;
 
@@ -31,9 +29,9 @@ afterEach(() => {
 
 it("should create an About page", () => {
 	ReactDOM.render(
-		<Provider store={createStore(rootReducer)}>
+		<Provider store={store}>
 			<Router>
-				<AboutContainer />
+				<About />
 			</Router>
 		</Provider>
 	, div);

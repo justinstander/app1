@@ -1,8 +1,7 @@
-import React from "react";
-
+import React,{useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import Api from "../../../api";
 import Badge from "react-bootstrap/Badge";
-
-import Page from "../Page";
 
 import {
   AboutContainer,
@@ -11,40 +10,27 @@ import {
   AboutValueCol
 } from "./About.style";
 
-/**
- * About Page
- */
-class About extends Page {
-  /**
-   * Fetches the total cost if needed
-   * @return {undefined}
-   */
-  componentDidMount() {
-    super.componentDidMount();
+export default (props) => {
+  const { totalCost } = useSelector((state) => state.about);
+  const dispatch = useDispatch();
 
-    if( this.props.totalCost === "$" ) {
-      this.props.getTotalCost();
+  useEffect(() => {
+    if( totalCost === "$" ) {
+      dispatch(Api.getTotalCost());
     }
-  }
+  });
 
-  /**
-   * @inheritDoc
-   */
-  render() {
-    return (
-      <AboutContainer>
-        <h3>About</h3>
-        <AboutRow>
-          <AboutLabelCol>
-            Last Month's Total AWS Cost:
-          </AboutLabelCol>
-          <AboutValueCol>
-            <Badge variant="success">{this.props.totalCost.data}</Badge>
-          </AboutValueCol>
-        </AboutRow>
-      </AboutContainer>
-    );
-  }
-}
-
-export default About;
+  return (
+    <AboutContainer>
+      <h3>About</h3>
+      <AboutRow>
+        <AboutLabelCol>
+          Last Month's Total AWS Cost:
+        </AboutLabelCol>
+        <AboutValueCol>
+          <Badge variant="success">{totalCost.data}</Badge>
+        </AboutValueCol>
+      </AboutRow>
+    </AboutContainer>
+  );
+};

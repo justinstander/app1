@@ -1,9 +1,9 @@
-import HomeContainer from "./home/HomeContainer";
-import AboutContainer from "./about/AboutContainer";
-import SearchContainer from "./search/SearchContainer";
+import Home from "./home/Home";
+import About from "./about/About";
+import Search from "./search/Search";
 
 export {
-  HomeContainer,
-  AboutContainer,
-  SearchContainer
+  Home,
+  About,
+  Search
 };
