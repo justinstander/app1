@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 /*
   CloseEvent.code 
@@ -24,21 +24,22 @@ import { useEffect, useState, useCallback } from "react";
 3000–3999   Available for use by libraries and frameworks. May not be used by applications. Available for registration at the IANA via first-come, first-serve.
 4000–4999   Available for use by applications.
    */
-export const useWebHook = () => {
-  const [data, setData] = useState([]);
-  
-  const socket = new WebSocket(process.env.REACT_APP_API_GATEWAY_ENDPOINT);
 
-  const send = (data) => socket.send(JSON.stringify({action:"sendmessage",data}))
+export const useWebSocketHook = () => {
+  const [data, setData] = useState([]);
+
+  let socket
+
+  // const send = (data) => socket.send(JSON.stringify({action:"sendmessage",data}))
 
   const handleWebSocketEvent = ({target:{protocol, readyState, url, extensions, bufferedAmount, binaryType}}) => {
-    console.log('handleWebSocketEvent --');
-    console.log('readyState', readyState);
-    console.log('protocol', protocol);
-    console.log('url',url);
-    console.log('extensions',extensions);
-    console.log('bufferedAmount',bufferedAmount);
-    console.log('binaryType',binaryType)
+    // console.log('handleWebSocketEvent --');
+    // console.log('readyState', readyState);
+    // console.log('protocol', protocol);
+    // console.log('url',url);
+    // console.log('extensions',extensions);
+    // console.log('bufferedAmount',bufferedAmount);
+    // console.log('binaryType',binaryType)
 
     switch(readyState) {
       case WebSocket.CONNECTING:
@@ -54,73 +55,64 @@ export const useWebHook = () => {
         console.log('WebSocket.CLOSED')
         break;
       default:
-        console.log('WebSocket.readyState DEFAULT',readyState)
+        console.warn('WebSocket.readyState DEFAULT?',readyState)
         break;
     }
   }
 
   const handleSocketOpen = (event) => {
     handleWebSocketEvent(event);
-
-    console.log('handleSocketOpen',event.target.readyState);
-
-    send("Yo yo, it's grease!");
+    console.log('handleSocketOpen --');
   };
-  const socketOpenCallback = useCallback(handleSocketOpen,[])
 
   const handleSocketClose = (event) => {
     handleWebSocketEvent(event);
-
-    const {code, reason, wasClean} = event;
     console.log('handleSocketClose --');
-    console.log('code',code);
-    console.log('reason',reason);
-    console.log('wasClean',wasClean);
-    
-    socket.removeEventListener('open', socketOpenCallback);
-    socket.removeEventListener('error', socketErrorCallback);
-    socket.removeEventListener('message', socketMessageCallback);
-    socket.removeEventListener('close', socketCloseCallback);
+    // const {code, reason, wasClean} = event;
+    // console.log('code',code);
+    // console.log('reason',reason);
+    // console.log('wasClean',wasClean);  
   };
-  const socketCloseCallback = useCallback(handleSocketClose,[])
 
   const handleSocketError = (event) => {
     handleWebSocketEvent(event);
-
-    console.log('handleSocketError',event)
+    console.error('handleSocketError',event)
   }
-  const socketErrorCallback = useCallback(handleSocketError,[])
 
   const handleSocketMessage = (event) => {
     handleWebSocketEvent(event);
-
-    const {origin,lastEventId,source,ports} = event
-    console.log('handleSocketMessage --',data);
+    console.log('handleSocketMessage --');
     console.log('event.data',event.data);
-    console.log('origin',origin);
-    console.log('lastEventId',lastEventId);
-    console.log('source',source);
-    console.log('ports',ports);
-
     setData(data.concat([event.data]));
+    // const {origin,lastEventId,source,ports} = event
+    // console.log('origin',origin);
+    // console.log('lastEventId',lastEventId);
+    // console.log('source',source);
+    // console.log('ports',ports);
   }
-  const socketMessageCallback = useCallback(handleSocketMessage,[data])
 
+  const createSocket = () => {
+    console.log('createSocket',process.env.REACT_APP_API_GATEWAY_ENDPOINT)
+    socket = new WebSocket(process.env.REACT_APP_API_GATEWAY_ENDPOINT);
+    socket.addEventListener('open', handleSocketOpen);
+    socket.addEventListener('close', handleSocketClose);
+    socket.addEventListener('error', handleSocketError);
+    socket.addEventListener('message', handleSocketMessage);
+  }
+
+  const destroySocket = () => {
+    console.log('destroySocket')
+    socket.close();
+    socket.removeEventListener('open', handleSocketOpen);
+    socket.removeEventListener('close', handleSocketClose);
+    socket.removeEventListener('error', handleSocketError);
+    socket.removeEventListener('message', handleSocketMessage);
+  }
+   
   useEffect(() => {
-    console.log('Create', process.env.REACT_APP_API_GATEWAY_ENDPOINT);
-
-    socket.addEventListener('open', socketOpenCallback);
-    socket.addEventListener('close', socketCloseCallback);
-    socket.addEventListener('error', socketErrorCallback);
-    socket.addEventListener('message', socketMessageCallback);
-    
-    return () => {
-      console.log('Destroy');
-      socket.close();
-    }
-  },[socket,socketMessageCallback])
-
-  console.log('data',data)
+    createSocket()
+    return destroySocket
+  })
   
   return data;
 };

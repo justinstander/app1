@@ -1,9 +1,9 @@
 import React from "react";
 import { PageContainer } from "../Page.style";
-import { useWebHook } from "../../../hooks"
+import { useWebSocketHook } from "../../../hooks"
 
 export default (props) => {
-  const data = useWebHook()
+  const data = useWebSocketHook()
   return (
     <PageContainer>
       {data && data.map((item,i) => 
