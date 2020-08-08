@@ -6,7 +6,7 @@ import Alert from "react-bootstrap/Alert";
 import {
   PageContainer,
   PageImage
-} from "../Page.style";
+} from "../style";
 
 /**
  * Home Page
