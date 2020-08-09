@@ -1,10 +1,13 @@
 import React, { useCallback, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux"
 import { Field, reduxForm, reset } from 'redux-form'
+import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useWebSocketHook } from "../../../hooks";
-import { PageContainer } from "../style";
-import { ChatContainer, MessageContainer, FormContainer, StyledForm, StyledMessage } from "./style";
+import { PageContainer, PageRow } from "../style";
+import { ChatContainer, MessageContainer, FormContainer, StyledForm } from "./style";
+import Message from '../../chat/Message'
+import FormControl from '../../chat/FormControl'
 
 const FORM_NAME = "chat"
 
@@ -12,7 +15,6 @@ const Chat = (props) => {
   const { handleSubmit } = props;
 
   const [data, send] = useWebSocketHook()
-
   const messageContainer = useRef(null);
   const dispatch = useDispatch();
 
@@ -20,42 +22,58 @@ const Chat = (props) => {
     (formData) => {
       send(formData.message)
       dispatch(reset(FORM_NAME))
-    },[send,dispatch]
+    },[send, dispatch]
   );
 
   useEffect(() => {
     const { current } = messageContainer;
     const { scrollHeight, clientHeight } = current;
     console.log('Chat',scrollHeight, clientHeight)
+
     if( scrollHeight > clientHeight ) {
       console.log('Update Scroll')
       current.scrollTo(0, current.scrollHeight)
     }
-  },[data])
+  }, [data])
+  console.log(data)
 
   return (
     <PageContainer>
-      <ChatContainer>
-        <MessageContainer ref={messageContainer}>
-          <Col>
-            {data && data.map((item,i) => 
-              <StyledMessage key={i}>{item}</StyledMessage>
-            )}
-          </Col>
-        </MessageContainer>
-        <FormContainer>
-          <Col>
-            <StyledForm onSubmit={handleSubmit(submitCallback)}>
-              <Field
-                name="message"
-                component="input"
-                type="text"
-                placeholder="Message"
-              />
-            </StyledForm>
-          </Col>
-        </FormContainer>
-      </ChatContainer>
+      <PageRow>
+        <Col style={{height:'100%'}}>
+          <ChatContainer>
+            <Row ref={messageContainer} style={{flex:1, height:'100%', overflow: 'auto'}}>
+              <Col style={{height:'100%'}}>
+                <MessageContainer>
+                  {data && data.map((item,i) => 
+                    <Row key={i}>
+                      <Col>
+                        <Message item={item}/>
+                      </Col>
+                    </Row>
+                  )}
+                </MessageContainer>
+              </Col>
+            </Row>
+            <Row style={{flex:0}}>
+              <Col>
+                <FormContainer>
+                  <Col>
+                    <StyledForm onSubmit={handleSubmit(submitCallback)} autoComplete="off">
+                      <Field
+                        name="message"
+                        component={FormControl}
+                        type="text"
+                        placeholder="Message"
+                      />
+                    </StyledForm>
+                  </Col>
+                </FormContainer>
+              </Col>
+            </Row>
+          </ChatContainer>
+        </Col>
+      </PageRow>
     </PageContainer>
   );
 }

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 
 /**
@@ -8,11 +9,19 @@ import Image from "react-bootstrap/Image";
  * @type {Container}
  */
 export const PageContainer = styled(Container)`
-  padding: 4.5rem 1rem 0.5rem;
+  padding: 3.5rem 0 0;
   height: 100%;
   display: flex;
   flex-direction: column;
 `;
+
+/**
+ * [PageRow description]
+ * @type {Row}
+ */
+export const PageRow = styled(Row)`
+  flex: 1;
+`
 
 /**
  * Styled Bootstrap Image

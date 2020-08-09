@@ -7,7 +7,7 @@ const EVENT_MESSAGE = 'message'
 
 export const useWebSocketHook = () => {
   const [socket] = useState(new WebSocket(process.env.REACT_APP_API_GATEWAY_ENDPOINT));
-  const [data, setData] = useState(['one','two','three','four','five']);
+  const [data, setData] = useState([]);
   const [readyState, setReadyState] = useState(socket.readyState);
 
   const sendMessage = useCallback((data) => {
@@ -30,7 +30,7 @@ export const useWebSocketHook = () => {
 
   const handleSocketMessage = useCallback(({data:message}) => {
     console.log('message',message)
-    setData(data.concat([message]))
+    setData(data.concat([JSON.parse(message)]))
   },[data])
 
   useEffect(() => {
