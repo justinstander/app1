@@ -9,6 +9,9 @@ import Image from "react-bootstrap/Image";
  */
 export const PageContainer = styled(Container)`
   padding: 4.5rem 1rem 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 /**
@@ -16,6 +19,5 @@ export const PageContainer = styled(Container)`
  * @type {Image}
  */
 export const PageImage = styled(Image)`
-  padding-bottom: 1rem;
-  width: 100%;
+  width: fill-available;
 `;
