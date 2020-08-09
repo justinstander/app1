@@ -11,8 +11,6 @@ import Image from "react-bootstrap/Image";
 export const PageContainer = styled(Container)`
   padding: 3.5rem 0 0;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 `;
 
 /**
@@ -20,7 +18,7 @@ export const PageContainer = styled(Container)`
  * @type {Row}
  */
 export const PageRow = styled(Row)`
-  flex: 1;
+  height: 100%
 `
 
 /**
