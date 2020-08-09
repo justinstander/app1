@@ -5,20 +5,21 @@ const EVENT_CLOSE = 'close'
 const EVENT_ERROR = 'error'
 const EVENT_MESSAGE = 'message'
 
+let socket
+
 export const useWebSocketHook = () => {
-  const [socket] = useState(new WebSocket(process.env.REACT_APP_API_GATEWAY_ENDPOINT));
   const [data, setData] = useState([]);
-  const [readyState, setReadyState] = useState(socket.readyState);
+  const [readyState, setReadyState] = useState(WebSocket.CONNECTING);
 
   const sendMessage = useCallback((data) => {
     console.log('sendMessage',data)
     socket.send(JSON.stringify({action:"sendmessage",data}))
-  },[socket])
+  },[])
 
   const handleSocketOpen = useCallback(() => {
     console.log('open')
     setReadyState(socket.readyState)
-  },[socket])
+  },[])
 
   const handleSocketClose = useCallback(() => {
     console.log('close')
@@ -34,22 +35,16 @@ export const useWebSocketHook = () => {
   },[data])
 
   useEffect(() => {
-    console.log('- Add Message listener -')
-    socket.addEventListener(EVENT_MESSAGE, handleSocketMessage,{once:true});
-  },[socket,handleSocketMessage])
+    console.log('create')
+    socket = new WebSocket(process.env.REACT_APP_API_GATEWAY_ENDPOINT);
+    setReadyState(socket.readyState)
 
-  useEffect(() => {
-    console.log('- Add Open, Close, Error listeners -')
-    socket.addEventListener(EVENT_OPEN, handleSocketOpen);
-    socket.addEventListener(EVENT_CLOSE, handleSocketClose);
-    socket.addEventListener(EVENT_ERROR, handleSocketError);
+    return () => {
+      console.log('destroy')
+      socket.close()
+    }
   },[
-      socket,
-      handleSocketOpen,
-      handleSocketClose,
-      handleSocketError
-    ]
-  )
+  ])
 
   useEffect(() => {
     switch(readyState) {
@@ -73,18 +68,23 @@ export const useWebSocketHook = () => {
       readyState,
     ]
   );
-  
-  useEffect(() => {
-    console.log('create')
-    setReadyState(socket.readyState)
 
-    return () => {
-      console.log('destroy')
-      socket.close()
-    }
+  useEffect(() => {
+    console.log('- Add Message listener -')
+    socket.addEventListener(EVENT_MESSAGE, handleSocketMessage,{once:true});
+  },[handleSocketMessage])
+
+  useEffect(() => {
+    console.log('- Add Open, Close, Error listeners -')
+    socket.addEventListener(EVENT_OPEN, handleSocketOpen);
+    socket.addEventListener(EVENT_CLOSE, handleSocketClose);
+    socket.addEventListener(EVENT_ERROR, handleSocketError);
   },[
-    socket,
-  ])
+      handleSocketOpen,
+      handleSocketClose,
+      handleSocketError
+    ]
+  )
 
   return [data, sendMessage]
 }
