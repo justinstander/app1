@@ -8,7 +8,7 @@ const EVENT_MESSAGE = 'message'
 let socket
 
 export const useWebSocketHook = () => {
-  const [data, setData] = useState([{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'},{from:'you',body:'yo'}]);
+  const [data, setData] = useState([]);
   const [readyState, setReadyState] = useState(WebSocket.CONNECTING);
 
   const sendMessage = useCallback((data) => {

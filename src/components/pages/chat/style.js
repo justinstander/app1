@@ -1,17 +1,13 @@
 import styled from "styled-components";
 
-import { Form } from "redux-form";
+import { PageContainer } from "../style";
 
-import Container from "react-bootstrap/Container";
-
-export const ChatContainer = styled(Container)`
-  height: 100%;
+/**
+ * [ChatContainer description]
+ * @type {PageContainer}
+ */
+export const ChatContainer = styled(PageContainer)`
   display: flex;
   flex-direction: column;
   background-color: white;
-`
-
-export const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
 `
