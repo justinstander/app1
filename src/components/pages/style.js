@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Col from 'react-bootstrap/Col'
 import Image from "react-bootstrap/Image";
 
 /**
@@ -9,7 +10,7 @@ import Image from "react-bootstrap/Image";
  * @type {Container}
  */
 export const PageContainer = styled(Container)`
-  padding: 3.5rem 0 0;
+  padding-top: 3.5rem;
   height: 100%;
 `;
 
@@ -18,9 +19,11 @@ export const PageContainer = styled(Container)`
  * @type {Row}
  */
 export const PageRow = styled(Row)`
-  height: 100%
+  height: 100%;
 `
-
+export const PageColumn = styled(Col)`
+  height: 100%;
+`
 /**
  * Styled Bootstrap Image
  * @type {Image}
