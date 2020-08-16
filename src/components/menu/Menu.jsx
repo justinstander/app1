@@ -21,7 +21,7 @@ export const Menu = withRouter((props) => {
 
   const menuLinkOnClick = (event) => {
     setExpanded(false);
-  }
+  };
 
   return (
       <MenuNavbar
