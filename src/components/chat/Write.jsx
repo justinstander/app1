@@ -13,8 +13,10 @@ const Write = ({send, connectionState, handleSubmit}) => {
 
   const submitCallback = useCallback(
     (formData) => {
-      send(formData.message);
-      dispatch(reset(FORM_NAME));
+      if(formData.message) {
+        send(formData.message);
+        dispatch(reset(FORM_NAME));
+      }
     }, [send, dispatch]
   );
 
