@@ -42,16 +42,16 @@ export const useChatRoom = () => {
   useEffect(() => {
     switch(readyState) {
       case WebSocket.CONNECTING:
-        setConnectionState({readyState,message:STRING_CONNECTING,variant:"primary"});
+        setConnectionState({readyState, message:STRING_CONNECTING});
         break;
       case WebSocket.OPEN:
-        setConnectionState({readyState,message:STRING_OPEN,variant:"success"});
+        setConnectionState({readyState, message:STRING_OPEN});
         break;
       case WebSocket.CLOSING:
-        setConnectionState({readyState,message:STRING_CLOSING,variant:"secondary"});
+        setConnectionState({readyState, message:STRING_CLOSING});
         break;
       case WebSocket.CLOSED:
-        setConnectionState({readyState,message:STRING_CLOSED,variant:"dark"});
+        setConnectionState({readyState, message:STRING_CLOSED});
         break;
       default:
         break;
