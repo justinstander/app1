@@ -9,4 +9,4 @@ export const useAutoScroll = (messageContainer, data) => {
       current.scrollTo(0, current.scrollHeight);
     }
   }, [messageContainer, data]);
-}
+};

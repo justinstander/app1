@@ -8,7 +8,7 @@ import { MessagesRow, MessagesCol } from "./style";
 export default ({data}) => {
   const messageContainer = useRef(null);
 
-  useAutoScroll(messageContainer, data)
+  useAutoScroll(messageContainer, data);
 
   return (
     <MessagesRow ref={messageContainer}>
