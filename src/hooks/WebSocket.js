@@ -95,7 +95,7 @@ export const useWebSocket = (handleSocketMessage) => {
     _socket.addEventListener(EVENT_MESSAGE, handleSocketMessage);
     return () => {
       _socket.removeEventListener(EVENT_MESSAGE, handleSocketMessage);
-    }
+    };
   },[handleSocketMessage]);
 
   return [readyState, send];
