@@ -10,14 +10,11 @@ export default ({data}) => {
   useEffect(() => {
     const { current } = messageContainer;
     const { scrollHeight, clientHeight } = current;
-    console.log('Chat',scrollHeight, clientHeight)
 
     if( scrollHeight > clientHeight ) {
-      console.log('Update Scroll')
       current.scrollTo(0, current.scrollHeight)
     }
   }, [data])
-  console.log(data)
 
   return (
     <MessagesRow ref={messageContainer}>

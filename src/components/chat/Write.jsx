@@ -8,7 +8,7 @@ import { WriteRow, WriteCol, StyledForm } from "./style";
 
 const FORM_NAME = "chat";
 
-const Write = ({send, handleSubmit}) => {
+const Write = ({send, connectionState, handleSubmit}) => {
   const dispatch = useDispatch();
 
   const submitCallback = useCallback(
@@ -26,7 +26,8 @@ const Write = ({send, handleSubmit}) => {
             name="message"
             component={FormControl}
             type="text"
-            placeholder="Message"
+            placeholder={connectionState.readyState === WebSocket.OPEN ? "Message" : connectionState.message}
+            props={{connectionState}}
           />
         </StyledForm>
       </WriteCol>

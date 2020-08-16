@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useChatRoomHook } from "../../../hooks";
+import { useChatRoom } from "../../../hooks";
 
 import Messages from "../../chat/Messages";
 import Write from "../../chat/Write";
@@ -8,12 +8,11 @@ import Write from "../../chat/Write";
 import { ChatContainer } from "./style";
 
 const Chat = (props) => {
-  const [data, send] = useChatRoomHook();
-  
+  const [data, connectionState, send] = useChatRoom();
   return (
     <ChatContainer>
       <Messages data={data} />
-      <Write send={send} />
+      <Write connectionState={connectionState} send={send} />
     </ChatContainer>
   );
 }

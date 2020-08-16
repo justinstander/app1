@@ -1,24 +1,70 @@
-import { useState, useCallback } from "react";
-import { useWebSocketHook } from "./WebSocket"
+import { useEffect, useState, useCallback } from "react";
+import { useWebSocket } from "./WebSocket"
+
+/**
+ * [STRING_CONNECTING description]
+ * @type {String}
+ */
+const STRING_CONNECTING = "Connecting...";
+
+/**
+ * [STRING_OPEN description]
+ * @type {String}
+ */
+const STRING_OPEN = "Open";
+
+/**
+ * [STRING_CLOSING description]
+ * @type {String}
+ */
+const STRING_CLOSING = "Closing...";
+
+/**
+ * [STRING_CLOSED description]
+ * @type {String}
+ */
+const STRING_CLOSED = "Closed";
 
 /**
  * [description]
  * @return {[type]} [description]
  */
-export const useChatRoomHook = () => {
+export const useChatRoom = () => {
   const [data, setData] = useState([]);
+  const [connectionState, setConnectionState] = useState([]);
 
   const handleSocketMessage = useCallback(({data:message}) => {
-    console.log('message',message)
     setData(data.concat([JSON.parse(message)]))
   },[data])
 
-  const send = useWebSocketHook(handleSocketMessage);
+  const [readyState, send] = useWebSocket(handleSocketMessage);
+
+  useEffect(() => {
+    switch(readyState) {
+      case WebSocket.CONNECTING:
+        setConnectionState({readyState,message:STRING_CONNECTING,variant:"primary"})
+        break;
+      case WebSocket.OPEN:
+        setConnectionState({readyState,message:STRING_OPEN,variant:"success"})
+        break;
+      case WebSocket.CLOSING:
+        setConnectionState({readyState,message:STRING_CLOSING,variant:"secondary"})
+        break;
+      case WebSocket.CLOSED:
+        setConnectionState({readyState,message:STRING_CLOSED,variant:"dark"})
+        break;
+      default:
+        console.warn('WebSocket.readyState DEFAULT?',readyState)
+        break;
+    }
+  },[
+      readyState,
+    ]
+  );
 
   const sendMessage = useCallback((message) => {
-    console.log('sendMessage',message)
     send(message)
   },[send])
 
-  return [data, sendMessage]
+  return [data, connectionState, sendMessage]
 }
