@@ -12,7 +12,7 @@ export default ({data}) => {
     const { scrollHeight, clientHeight } = current;
 
     if( scrollHeight > clientHeight ) {
-      current.scrollTo(0, current.scrollHeight)
+      current.scrollTo(0, current.scrollHeight);
     }
   }, [data]);
 
@@ -24,5 +24,5 @@ export default ({data}) => {
         )}
       </MessagesCol>
     </MessagesRow>
-  )
+  );
 };

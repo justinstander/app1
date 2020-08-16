@@ -15,6 +15,6 @@ const Chat = (props) => {
       <Write connectionState={connectionState} send={send} />
     </ChatContainer>
   );
-}
+};
 
 export default Chat;

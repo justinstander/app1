@@ -16,7 +16,7 @@ let _socket;
  * @param  {[type]} data [description]
  * @return {[type]}      [description]
  */
-const socketMessage = (data) => JSON.stringify({action:ACTION_SENDMESSAGE, data})
+const socketMessage = (data) => JSON.stringify({action:ACTION_SENDMESSAGE, data});
 
 /**
  * [EVENT_OPEN description]
@@ -65,14 +65,14 @@ export const useWebSocket = (handleSocketMessage) => {
 
   useEffect(() => {
     _socket = new WebSocket(process.env.REACT_APP_API_GATEWAY_ENDPOINT);
-    setReadyState(_socket.readyState)
+    setReadyState(_socket.readyState);
 
     return () => {
       _socket.close();
       _socket.removeEventListener(EVENT_OPEN, handleSocketOpen);
       _socket.removeEventListener(EVENT_CLOSE, handleSocketClose);
       _socket.removeEventListener(EVENT_ERROR, handleSocketError);
-    }
+    };
   },[
     handleSocketError,
     handleSocketClose,
