@@ -1,5 +1,5 @@
 ### Work in Progress
-#### Serverless Client Side React App with AWS CodeBuild and CodePipeline CI
+#### Serverless Client Side React App with AWS CodeBuild, CodePipeline, API Gateway, CloudFront, and Lambda
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4dda0777626d40e4802bb14351e214b5)](https://www.codacy.com/manual/justinstander/app1?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=justinstander/app1&amp;utm_campaign=Badge_Grade) ![AWS CodeBuild Badge for Master](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoianlLZzRIWDlJa1JoTDJ6VEg4a2pqUnZnQTRsOWhDTUN1eGJrOGtpeWQ0amUzY3NqazV5OWF3c1ZoVWx4OUg1MjEyRWd1MittUVFsTnJFbkt5TDlmY0JZPSIsIml2UGFyYW1ldGVyU3BlYyI6InZLRXBUcldIdm9EdytoNzUiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
