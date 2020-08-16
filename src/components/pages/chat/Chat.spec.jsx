@@ -28,11 +28,11 @@ afterEach(() => {
 });
 
 it("should create Chat page", () => {
-	ReactDOM.render(
-		<Provider store={store}>
-			<Router>
-				<Chat />
-			</Router>
-		</Provider>
-	, div);
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router>
+        <Chat />
+      </Router>
+    </Provider>
+  , div);
 });
