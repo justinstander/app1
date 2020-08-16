@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { useWebSocket } from "./WebSocket"
+import { useWebSocket } from "./WebSocket";
 
 /**
  * [STRING_CONNECTING description]
@@ -34,27 +34,26 @@ export const useChatRoom = () => {
   const [connectionState, setConnectionState] = useState([]);
 
   const handleSocketMessage = useCallback(({data:message}) => {
-    setData(data.concat([JSON.parse(message)]))
-  },[data])
+    setData(data.concat([JSON.parse(message)]));
+  },[data]);
 
   const [readyState, send] = useWebSocket(handleSocketMessage);
 
   useEffect(() => {
     switch(readyState) {
       case WebSocket.CONNECTING:
-        setConnectionState({readyState,message:STRING_CONNECTING,variant:"primary"})
+        setConnectionState({readyState,message:STRING_CONNECTING,variant:"primary"});
         break;
       case WebSocket.OPEN:
-        setConnectionState({readyState,message:STRING_OPEN,variant:"success"})
+        setConnectionState({readyState,message:STRING_OPEN,variant:"success"});
         break;
       case WebSocket.CLOSING:
-        setConnectionState({readyState,message:STRING_CLOSING,variant:"secondary"})
+        setConnectionState({readyState,message:STRING_CLOSING,variant:"secondary"});
         break;
       case WebSocket.CLOSED:
-        setConnectionState({readyState,message:STRING_CLOSED,variant:"dark"})
+        setConnectionState({readyState,message:STRING_CLOSED,variant:"dark"});
         break;
       default:
-        console.warn('WebSocket.readyState DEFAULT?',readyState)
         break;
     }
   },[
@@ -63,8 +62,8 @@ export const useChatRoom = () => {
   );
 
   const sendMessage = useCallback((message) => {
-    send(message)
-  },[send])
+    send(message);
+  },[send]);
 
-  return [data, connectionState, sendMessage]
-}
+  return [data, connectionState, sendMessage];
+};

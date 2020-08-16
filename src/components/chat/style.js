@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 import { Form } from "redux-form";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ToastBody from 'react-bootstrap/ToastBody'
+import ToastBody from "react-bootstrap/ToastBody";
 import FormControl from "react-bootstrap/FormControl";
 
 /**
@@ -14,7 +14,7 @@ import FormControl from "react-bootstrap/FormControl";
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-`
+`;
 
 /**
  * [StyledToastBody description]
@@ -22,14 +22,14 @@ export const StyledForm = styled(Form)`
  */
 export const StyledToastBody = styled(ToastBody)`
   color:initial
-`
+`;
 
 /**
  * [StyledFormControl description]
  * @type {[type]}
  */
 export const StyledFormControl = styled(FormControl)`
-`
+`;
 
 /**
  * [MessagesRow description]
@@ -38,7 +38,7 @@ export const StyledFormControl = styled(FormControl)`
 export const MessagesRow = styled(Row)`
   flex: 1;
   overflow: auto;
-`
+`;
 
 /**
  * [MessagesCol description]
@@ -47,7 +47,7 @@ export const MessagesRow = styled(Row)`
 export const MessagesCol = styled(Col)`
   padding-top: 1rem;
   padding-bottom: 1rem;
-`
+`;
 
 /**
  * [WriteRow description]
@@ -55,7 +55,7 @@ export const MessagesCol = styled(Col)`
  */
 export const WriteRow = styled(Row)`
   flex: 0;
-`
+`;
 
 /**
  * [WriteCol description]
@@ -64,4 +64,4 @@ export const WriteRow = styled(Row)`
 export const WriteCol = styled(Col)`
   padding-bottom: 1rem;
   padding-top: 1rem;
-`
+`;

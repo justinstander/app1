@@ -13,8 +13,8 @@ const Write = ({send, connectionState, handleSubmit}) => {
 
   const submitCallback = useCallback(
     (formData) => {
-      send(formData.message)
-      dispatch(reset(FORM_NAME))
+      send(formData.message);
+      dispatch(reset(FORM_NAME));
     }, [send, dispatch]
   );
 
@@ -32,9 +32,9 @@ const Write = ({send, connectionState, handleSubmit}) => {
         </StyledForm>
       </WriteCol>
     </WriteRow>
-  )
-}
+  );
+};
 
 export default reduxForm({
   form: FORM_NAME
-})(Write)
+})(Write);

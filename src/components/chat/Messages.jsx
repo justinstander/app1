@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 import Message from "./Message";
 
-import { MessagesRow, MessagesCol } from "./style"
+import { MessagesRow, MessagesCol } from "./style";
 
 export default ({data}) => {
   const messageContainer = useRef(null);
@@ -14,7 +14,7 @@ export default ({data}) => {
     if( scrollHeight > clientHeight ) {
       current.scrollTo(0, current.scrollHeight)
     }
-  }, [data])
+  }, [data]);
 
   return (
     <MessagesRow ref={messageContainer}>
@@ -25,4 +25,4 @@ export default ({data}) => {
       </MessagesCol>
     </MessagesRow>
   )
-}
+};

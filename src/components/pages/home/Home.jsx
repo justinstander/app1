@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
-import Row from 'react-bootstrap/Row'
+import Row from "react-bootstrap/Row";
 import {
   PageContainer,
   PageImage

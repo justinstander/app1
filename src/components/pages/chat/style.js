@@ -10,4 +10,4 @@ export const ChatContainer = styled(PageContainer)`
   display: flex;
   flex-direction: column;
   background-color: white;
-`
+`;
