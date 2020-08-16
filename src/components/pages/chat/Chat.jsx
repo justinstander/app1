@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useChatRoom } from "../../../hooks";
+import { useChatRoom } from "../../../hooks/ChatRoom";
 
 import Messages from "../../chat/Messages";
 import Write from "../../chat/Write";

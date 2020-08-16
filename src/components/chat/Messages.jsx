@@ -1,20 +1,14 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 import Message from "./Message";
+import { useAutoScroll } from "../../hooks/AutoScroll";
 
 import { MessagesRow, MessagesCol } from "./style";
 
 export default ({data}) => {
   const messageContainer = useRef(null);
 
-  useEffect(() => {
-    const { current } = messageContainer;
-    const { scrollHeight, clientHeight } = current;
-
-    if( scrollHeight > clientHeight ) {
-      current.scrollTo(0, current.scrollHeight);
-    }
-  }, [data]);
+  useAutoScroll(messageContainer, data)
 
   return (
     <MessagesRow ref={messageContainer}>
