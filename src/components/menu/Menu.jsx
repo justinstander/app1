@@ -21,7 +21,7 @@ export const Menu = withRouter((props) => {
 
   const menuLinkOnClick = (event) => {
     setExpanded(false);
-  }
+  };
 
   return (
       <MenuNavbar
@@ -42,6 +42,13 @@ export const Menu = withRouter((props) => {
           <MenuNavbar.Collapse>
             <Nav className="mr-auto"/>
             <Nav>
+              <Nav.Link as="div">
+                <MenuLink
+                  to="/chat"
+                  onClick={menuLinkOnClick}>
+                  Chat
+                </MenuLink>
+              </Nav.Link>
               <Nav.Link as="div">
                 <MenuLink
                   to="/search"
